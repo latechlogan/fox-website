@@ -1,0 +1,56 @@
+<header class="fw-container">
+  <div class="mw-container header">
+    <a href="/" class="banner" aria-label="Fox Family Electric — home"
+      >Fox Family Electric</a
+    >
+
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <ul class="nav-group">
+        <li class="nav-element">
+          <a href="#" class="nav-link">What we do</a>
+        </li>
+        <li class="nav-element">
+          <a href="#" class="nav-link">Generators</a>
+        </li>
+        <li class="nav-element">
+          <a href="#" class="nav-link">About us</a>
+        </li>
+        <li class="nav-element">
+          <a href="#" class="nav-link">More</a>
+        </li>
+      </ul>
+
+      <ul class="nav-group">
+        <li class="nav-element">
+          <a href="#" class="nav-link nav-btn">Contact</a>
+        </li>
+        <li class="nav-element">
+          <a href="#" class="nav-link nav-btn nav-btn__secondary">Book</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+  const nav = document.querySelector<HTMLElement>("#primary-nav");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    nav?.setAttribute("data-open", String(!isOpen));
+  });
+</script>
