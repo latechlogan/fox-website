@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import placeholder from "../../src/assets/placeholder.jpg";
+---
+
+<section class="fw-container">
+  <div class="mw-container">
+    <div class="global-cta">
+      <div class="content-wrapper">
+        <h2 class="text-heading">Ready to get started?</h2>
+        <p class="text-base">
+          Tell us what you need and we'll take it from there.
+        </p>
+        <div class="btn-wrapper">
+          <a href="" class="btn">Book a service call</a>
+          <a href="" class="btn btn-secondary">Email us</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <Image src={placeholder} alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .global-cta {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #222;
+    border-radius: 0.375rem;
+    overflow: hidden;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .content-wrapper .text-heading {
+    font-size: var(--text-4xl);
+    margin: 0 0 1rem 0;
+  }
+
+  .content-wrapper .text-base {
+    margin: 0 0 1rem 0;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .image-wrapper {
+    max-height: 240px;
+    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 700px) {
+    .global-cta {
+      flex-wrap: nowrap;
+    }
+
+    .content-wrapper {
+      width: 50%;
+    }
+
+    .image-wrapper {
+      width: 50%;
+      max-height: 300px;
+    }
+  }
+</style>
