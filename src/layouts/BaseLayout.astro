@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../css/global.css";
 ---
 
@@ -10,15 +11,16 @@ import "../css/global.css";
     <link rel="icon" href="/favicon.ico" />
     <!-- font link -->
     <link
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=spline-sans@1&display=swap"
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Fox Family Electric</title>
   </head>
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
