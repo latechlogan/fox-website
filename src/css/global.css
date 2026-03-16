@@ -124,10 +124,35 @@ body {
   font-size: var(--text-5xl);
 }
 
+.text-heading {
+  line-height: 1.2;
+  letter-spacing: -0.03rem;
+}
+
 /*----- global styling ----------*/
 
 a {
   color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  background-color: #222;
+  border: 1px solid #222;
+  border-radius: 0.25rem;
+}
+
+.btn-secondary {
+  color: #222;
+  background-color: #fff;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .fw-container {
