@@ -1,8 +1,13 @@
+---
+import { Image } from "astro:assets";
+import foxLogo from "../../src/assets/redfox_highres.jpg";
+---
+
 <header class="fw-container">
   <div class="mw-container header">
-    <a href="/" class="banner" aria-label="Fox Family Electric — home"
-      >Fox Family Electric</a
-    >
+    <a href="/" class="banner" aria-label="Fox Family Electric — home">
+      <Image src={foxLogo} alt="Fox Family Electric Logo" />
+    </a>
 
     <button
       class="nav-toggle"
@@ -65,10 +70,9 @@
     align-items: center;
   }
 
-  .banner {
-    font-size: var(--text-lg);
-    font-weight: 700;
-    text-decoration: none;
+  .banner img {
+    width: auto;
+    height: 40px;
   }
 
   .nav-toggle {
@@ -145,7 +149,7 @@
       top: 100%;
       left: 0;
       width: 100%;
-      height: calc(100vh - 64px);
+      height: calc(100vh - 72px);
       display: none;
       background: #fff;
       z-index: 100;
