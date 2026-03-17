@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import SectionIntro from "./SectionIntro.astro";
 import placeholder from "../../src/assets/placeholder.jpg";
 ---
 
@@ -7,11 +8,11 @@ import placeholder from "../../src/assets/placeholder.jpg";
   <div class="mw-container">
     <div class="global-cta">
       <div class="content-wrapper">
-        <h2 class="text-heading">Ready to get started?</h2>
-        <p class="text-base">
-          Tell us what you need and we'll take it from there.
-        </p>
-        <div class="btn-wrapper">
+        <SectionIntro
+          heading="Ready to get started?"
+          body="Tell us what you need and we'll take it from there."
+        />
+        <div class="btn-group">
           <a href="" class="btn">Book a service call</a>
           <a href="" class="btn btn-secondary">Email us</a>
         </div>
@@ -31,7 +32,7 @@ import placeholder from "../../src/assets/placeholder.jpg";
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid #222;
+    border: 1px solid #ccc;
     border-radius: 0.375rem;
     overflow: hidden;
   }
@@ -48,14 +49,6 @@ import placeholder from "../../src/assets/placeholder.jpg";
 
   .content-wrapper .text-base {
     margin: 0 0 1rem 0;
-  }
-
-  .btn-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0.5rem;
   }
 
   .image-wrapper {
