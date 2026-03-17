@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import SectionIntro from "./SectionIntro.astro";
+
+const { eyebrow, heading, body, image, imageAlt } = Astro.props;
+---
+
+<div class="fw-container">
+  <div class="mw-container hero">
+    <div class="content-wrapper">
+      <SectionIntro eyebrow={eyebrow} heading={heading} body={body} />
+
+      <!-- optional slots for dynamic content display -->
+      <!-- styling for slot content must be done in the page it's displayed on -->
+      <slot name="bullets" />
+      <slot name="logo" />
+
+      <div class="btn-group">
+        <slot name="buttons" />
+      </div>
+    </div>
+
+    <div class="image-wrapper">
+      <Image src={image} alt={imageAlt} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .content-wrapper {
+    width: 100%;
+  }
+
+  .btn-group {
+    margin: 1rem 0 0 0;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero {
+      flex-wrap: nowrap;
+      gap: 2rem;
+    }
+  }
+</style>

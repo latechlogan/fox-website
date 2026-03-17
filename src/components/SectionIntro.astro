@@ -1,0 +1,17 @@
+---
+const { eyebrow, heading, body } = Astro.props;
+---
+
+{eyebrow && <p class="eyebrow">{eyebrow}</p>}
+<h2 class="text-4xl text-heading">{heading}</h2>
+<p class="text-base">{body}</p>
+
+<style>
+  .text-heading {
+    margin: 0 0 1rem 0;
+  }
+
+  .text-base {
+    margin: 0 0 1rem 0;
+  }
+</style>

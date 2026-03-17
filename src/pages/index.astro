@@ -1,7 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import { Image } from "astro:assets";
+
+import liveSwitch from "../../src/assets/liveswitch-logo.png";
+import placeholder from "../../src/assets/placeholder.jpg";
 ---
 
 <BaseLayout>
-  <h1>Fox Family Electric Homepage</h1>
+  <Hero
+    heading="We're the electrical contractors trusted by your neighbors."
+    body="Fox Family Electric has been reliably serving this community for generations. We show up on time, do the job right, and treat your home like it's our own."
+    image={placeholder}
+    imageAlt="placholder image"
+  >
+    <!-- <ul slot="bullets">
+      <li>Residential & Commercial</li>
+      <li>24/7 Emergency Service</li>
+      <li>Free Estimates</li>
+    </ul>
+    <Image
+      slot="logo"
+      src={liveSwitch}
+      alt="LiveSwitch logo"
+      class="featured-logo"
+    /> -->
+    <Fragment slot="buttons">
+      <a href="" class="btn">Book a service call</a>
+      <a href="" class="btn btn-secondary">Contact us</a>
+    </Fragment>
+  </Hero>
 </BaseLayout>
+
+<style>
+  .featured-logo {
+    display: inline-block;
+    margin: 1rem 0 0 0;
+  }
+</style>
