@@ -2,11 +2,11 @@
 import { Image } from "astro:assets";
 import SectionIntro from "./SectionIntro.astro";
 
-const { eyebrow, heading, body, image, imageAlt } = Astro.props;
+const { eyebrow, heading, body, image, imageAlt, reverse } = Astro.props;
 ---
 
 <div class="fw-container">
-  <div class="mw-container hero">
+  <div class={`mw-container hero ${reverse ? "reverse" : ""}`}>
     <div class="content-wrapper">
       <SectionIntro eyebrow={eyebrow} heading={heading} body={body} />
 
@@ -34,6 +34,10 @@ const { eyebrow, heading, body, image, imageAlt } = Astro.props;
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+  }
+
+  .hero.reverse {
+    flex-direction: row-reverse;
   }
 
   .content-wrapper {
