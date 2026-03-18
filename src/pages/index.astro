@@ -1,9 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import { Image } from "astro:assets";
+import ReviewGrid from "../components/ReviewGrid.astro";
 
-import liveSwitch from "../../src/assets/liveswitch-logo.png";
 import placeholder from "../../src/assets/placeholder.jpg";
 ---
 
@@ -30,6 +29,10 @@ import placeholder from "../../src/assets/placeholder.jpg";
       <a href="" class="btn btn-secondary">Contact us</a>
     </Fragment>
   </Hero>
+  <ReviewGrid
+    heading="Don't take our word for it."
+    body="Highly rated across Louisiana for service calls, projects, and generator installations"
+  />
 </BaseLayout>
 
 <style>

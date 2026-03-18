@@ -1,0 +1,51 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+import ReviewCard from "./ReviewCard.astro";
+import { reviews } from "../data/reviews";
+const { heading, body } = Astro.props;
+---
+
+<div class="fw-container">
+  <div class="mw-container review-grid">
+    <div class="review-grid-intro">
+      <SectionIntro heading={heading} body={body} />
+    </div>
+    <div class="review-card-group">
+      {
+        reviews.map((review) => {
+          return <ReviewCard review={review} />;
+        })
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .review-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .review-grid-intro {
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+
+  .review-card-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .review-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+</style>
