@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import SectionGrid from "../components/SectionGrid.astro";
 import ReviewBlock from "../components/ReviewBlock.astro";
 import { reviews } from "../data/reviews";
+import IconBlock from "../components/IconBlock.astro";
 import { businessLines } from "../data/businessLines";
 
 import placeholder from "../../src/assets/placeholder.jpg";
@@ -64,12 +65,19 @@ import placeholder from "../../src/assets/placeholder.jpg";
     eyebrow="Expertise"
     heading="Everything electrical, handled by people who care."
     body="Whether it's a flickering outlet or a full commercial build, we handle it all — from routine repairs to large-scale projects, generator installations to panel upgrades. Whatever the job, we bring the same skill and the same standard."
+    columns={4}
     cta={{ href: "#", secondary: true, label: "Explore our services" }}
   >
     <!-- convert from ReviewBlock to ServiceCard (or other name) and map businessLines -->
     {
-      reviews.map((review) => {
-        return <ReviewBlock review={review} />;
+      businessLines.map((service) => {
+        return (
+          <IconBlock
+            icon={service.icon}
+            heading={service.heading}
+            body={service.body}
+          />
+        );
       })
     }
   </SectionGrid>

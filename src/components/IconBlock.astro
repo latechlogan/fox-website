@@ -1,0 +1,32 @@
+---
+const { icon: Icon, heading, body } = Astro.props;
+---
+
+<div class="icon-block">
+  <Icon size="2.4rem" />
+  <strong class="icon-block__heading">{heading}</strong>
+  <p class="icon-block__body">{body}</p>
+</div>
+
+<style>
+  .icon-block {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .icon-block__heading {
+    font-size: var(--text-lg);
+    margin: 1rem 0 0 0;
+  }
+
+  .icon-block__body {
+    text-wrap: balance;
+    margin: 0.5rem 0 0 0;
+  }
+</style>
