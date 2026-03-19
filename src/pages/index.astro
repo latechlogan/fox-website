@@ -52,8 +52,8 @@ import placeholder from "../../src/assets/placeholder.jpg";
     heading="Built on trust. Rooted in Louisiana."
     body="Our family has been doing this work for three generations and we take pride in doing it right. We're not a big corporation. We're your neighbors, and every job we take on gets the same care we'd give our own home."
     image={placeholder}
-    imageAlt="placholder image"
-    reverse="true"
+    imageAlt=""
+    reverse={true}
   >
     <Fragment slot="buttons">
       <a href="" class="btn btn-secondary">Meet the family</a>
@@ -81,11 +81,36 @@ import placeholder from "../../src/assets/placeholder.jpg";
       })
     }
   </SectionGrid>
-</BaseLayout>
 
-<style>
-  .featured-logo {
-    display: inline-block;
-    margin: 1rem 0 0 0;
-  }
-</style>
+  <Hero
+    eyebrow="Innovation"
+    heading={"Get estimates faster.\nNo visit required."}
+    body="With LiveSwitch, we assess your job through a live video call so you can get a quote faster and skip the dispatch fee. Just show us what you're working with and we'll take it from there."
+    image={placeholder}
+    imageAlt=""
+  >
+    <Fragment slot="buttons">
+      <a href="" class="btn btn-secondary">Learn how it works</a>
+    </Fragment>
+  </Hero>
+
+  <Hero
+    eyebrow="Power"
+    heading="Generators that keep Louisiana running."
+    body="In Louisiana, storms come without warning. A generator isn't a luxury, it's peace of mind. We sell, install, and maintain them so you're never left in the dark."
+    image={placeholder}
+    imageAlt=""
+    reverse={true}
+  >
+    <Fragment slot="buttons">
+      <a href="" class="btn btn-secondary">Call about generators</a>
+    </Fragment>
+  </Hero>
+
+  <style>
+    .featured-logo {
+      display: inline-block;
+      margin: 1rem 0 0 0;
+    }
+  </style>
+</BaseLayout>
