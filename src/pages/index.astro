@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import Image from "astro/components/Image.astro";
+import liveSwitch from "../assets/liveswitch-logo.png";
+import liveSwitchPhoto from "../assets/liveswitch-photo.png";
 import SectionGrid from "../components/SectionGrid.astro";
 import ReviewBlock from "../components/ReviewBlock.astro";
 import { reviews } from "../data/reviews";
@@ -22,13 +25,7 @@ import placeholder from "../../src/assets/placeholder.jpg";
       <li>Residential & Commercial</li>
       <li>24/7 Emergency Service</li>
       <li>Free Estimates</li>
-    </ul>
-    <Image
-      slot="logo"
-      src={liveSwitch}
-      alt="LiveSwitch logo"
-      class="featured-logo"
-    /> -->
+    </ul> -->
     <Fragment slot="buttons">
       <a href="" class="btn">Book a service call</a>
       <a href="" class="btn btn-secondary">Contact us</a>
@@ -87,9 +84,15 @@ import placeholder from "../../src/assets/placeholder.jpg";
     eyebrow="Innovation"
     heading={"Get estimates faster.\nNo visit required."}
     body="With LiveSwitch, we assess your job through a live video call so you can get a quote faster and skip the dispatch fee. Just show us what you're working with and we'll take it from there."
-    image={placeholder}
+    image={liveSwitchPhoto}
     imageAlt=""
   >
+    <Image
+      slot="logo"
+      src={liveSwitch}
+      alt="LiveSwitch logo"
+      class="featured-logo"
+    />
     <Fragment slot="buttons">
       <a href="" class="btn btn-secondary">Learn how it works</a>
     </Fragment>
@@ -113,6 +116,7 @@ import placeholder from "../../src/assets/placeholder.jpg";
 
 <style>
   .featured-logo {
+    max-width: 200px;
     display: inline-block;
     margin: 1rem 0 0 0;
   }
