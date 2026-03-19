@@ -1,0 +1,49 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
+---
+
+<div class="fw-container">
+  <div class="mw-container section-grid">
+    <div class="section-grid__intro">
+      <SectionIntro {eyebrow} {heading} {body} />
+    </div>
+    <div class="section-grid__grid">
+      <slot />
+    </div>
+    {
+      cta && (
+        <div class="section-grid__cta btn-group">
+          <a
+            href={cta.href}
+            class={`btn ${cta.secondary ? "btn-secondary" : ""}`}
+          >
+            {cta.label}
+          </a>
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .section-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .section-grid__intro {
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+
+  .section-grid__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+</style>

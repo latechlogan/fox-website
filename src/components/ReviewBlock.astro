@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 const { review } = Astro.props;
 ---
 
-<div class="review-card">
+<div class="review-block">
   <div class="star-wrapper">
     {Array.from({ length: review.stars }, (_, i) => <FaStar />)}
   </div>
@@ -25,7 +25,7 @@ const { review } = Astro.props;
 </div>
 
 <style>
-  .review-card {
+  .review-block {
     padding: 2rem;
     border: 1px solid #ccc;
     border-radius: 0.375rem;
@@ -48,6 +48,10 @@ const { review } = Astro.props;
 
   .star-wrapper > * {
     font-size: 1.2rem;
+  }
+
+  .review {
+    flex-grow: 1;
   }
 
   .reviewer {

@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import ReviewGrid from "../components/ReviewGrid.astro";
+import SectionGrid from "../components/SectionGrid.astro";
+import ReviewBlock from "../components/ReviewBlock.astro";
+import { reviews } from "../data/reviews";
+import { businessLines } from "../data/businessLines";
 
 import placeholder from "../../src/assets/placeholder.jpg";
 ---
@@ -30,11 +33,19 @@ import placeholder from "../../src/assets/placeholder.jpg";
     </Fragment>
   </Hero>
 
-  <ReviewGrid
+  <!-- reviews section -->
+  <SectionGrid
     heading="Don't take our word for it."
     body="Highly rated across Louisiana for service calls, projects, and generator installations"
-  />
+  >
+    {
+      reviews.map((review) => {
+        return <ReviewBlock review={review} />;
+      })
+    }
+  </SectionGrid>
 
+  <!-- family/louisiana -->
   <Hero
     eyebrow="Family"
     heading="Built on trust. Rooted in Louisiana."
@@ -47,6 +58,21 @@ import placeholder from "../../src/assets/placeholder.jpg";
       <a href="" class="btn btn-secondary">Meet the family</a>
     </Fragment>
   </Hero>
+
+  <!-- electrical expertise -->
+  <SectionGrid
+    eyebrow="Expertise"
+    heading="Everything electrical, handled by people who care."
+    body="Whether it's a flickering outlet or a full commercial build, we handle it all — from routine repairs to large-scale projects, generator installations to panel upgrades. Whatever the job, we bring the same skill and the same standard."
+    cta={{ href: "#", secondary: true, label: "Explore our services" }}
+  >
+    <!-- convert from ReviewBlock to ServiceCard (or other name) and map businessLines -->
+    {
+      reviews.map((review) => {
+        return <ReviewBlock review={review} />;
+      })
+    }
+  </SectionGrid>
 </BaseLayout>
 
 <style>
