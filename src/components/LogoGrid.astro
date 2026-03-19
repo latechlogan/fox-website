@@ -1,0 +1,75 @@
+---
+const { heading } = Astro.props;
+import { Image } from "astro:assets";
+import { logos } from "../data/logos";
+---
+
+<div class="fw-container">
+  <div class="mw-container logo-grid">
+    <h2 class="logo-grid__heading">{heading}</h2>
+    <div class="logo-grid__grid">
+      {
+        logos.map((logo: any) => {
+          return (
+            <div class="logo-grid__logo-wrapper">
+              <Image src={logo.src} alt={logo.alt} class="logo-grid__logo" />
+            </div>
+          );
+        })
+      }
+      {
+        logos.map((logo: any) => {
+          return (
+            <div class="logo-grid__logo-wrapper">
+              <Image src={logo.src} alt={logo.alt} class="logo-grid__logo" />
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .logo-grid__grid {
+    text-align: center;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-grid__heading {
+    text-align: center;
+  }
+
+  .logo-grid__logo-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-grid__logo {
+    max-width: 200px;
+  }
+
+  @media screen and (min-width: 600px) {
+    .logo-grid__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .logo-grid__grid {
+      margin: 4rem 0;
+      row-gap: 4rem;
+    }
+  }
+</style>

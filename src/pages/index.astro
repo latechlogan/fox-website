@@ -6,6 +6,7 @@ import ReviewBlock from "../components/ReviewBlock.astro";
 import { reviews } from "../data/reviews";
 import IconBlock from "../components/IconBlock.astro";
 import { businessLines } from "../data/businessLines";
+import LogoGrid from "../components/LogoGrid.astro";
 
 import placeholder from "../../src/assets/placeholder.jpg";
 ---
@@ -107,10 +108,12 @@ import placeholder from "../../src/assets/placeholder.jpg";
     </Fragment>
   </Hero>
 
-  <style>
-    .featured-logo {
-      display: inline-block;
-      margin: 1rem 0 0 0;
-    }
-  </style>
+  <LogoGrid heading="Trusted by Louisiana families and businesses" />
 </BaseLayout>
+
+<style>
+  .featured-logo {
+    display: inline-block;
+    margin: 1rem 0 0 0;
+  }
+</style>
