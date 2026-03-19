@@ -33,7 +33,7 @@ const { eyebrow, heading, body, image, imageAlt, reverse } = Astro.props;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .hero.reverse {
@@ -44,10 +44,6 @@ const { eyebrow, heading, body, image, imageAlt, reverse } = Astro.props;
     width: 100%;
   }
 
-  .btn-group {
-    margin: 1rem 0 0 0;
-  }
-
   .image-wrapper {
     width: 100%;
   }
@@ -55,7 +51,6 @@ const { eyebrow, heading, body, image, imageAlt, reverse } = Astro.props;
   @media screen and (min-width: 768px) {
     .hero {
       flex-wrap: nowrap;
-      gap: 2rem;
     }
   }
 </style>

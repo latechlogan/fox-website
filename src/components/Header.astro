@@ -63,7 +63,7 @@ import foxLogo from "../../src/assets/redfox_highres.jpg";
 <style>
   /* padding overrides global rule */
   .header {
-    padding: 1rem;
+    padding: 1rem 2rem;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -112,7 +112,11 @@ import foxLogo from "../../src/assets/redfox_highres.jpg";
     padding: 0.25rem 0.75rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
+    .header {
+      padding: 1rem;
+    }
+
     .banner img {
       width: auto;
       height: 40px;

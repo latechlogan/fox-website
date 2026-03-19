@@ -43,13 +43,10 @@ const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
     margin: 0 0 1rem 0;
   }
 
-  .section-grid__grid {
-    width: 100%;
-    margin: 0 0 1rem 0;
-  }
-
   .section-grid__grid.three-column,
   .section-grid__grid.four-column {
+    width: 100%;
+    margin: 1rem 0;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
