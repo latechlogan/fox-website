@@ -12,12 +12,14 @@ const { icon: Icon, heading, body } = Astro.props;
   .icon-block {
     width: 100%;
     max-width: 400px;
+    height: 100%;
     margin: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 0.5rem;
   }
 
   .icon-block__heading {
@@ -27,6 +29,6 @@ const { icon: Icon, heading, body } = Astro.props;
 
   .icon-block__body {
     text-wrap: balance;
-    margin: 0.5rem 0 0 0;
+    flex-grow: 1;
   }
 </style>
