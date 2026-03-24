@@ -8,9 +8,7 @@ const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
     <div class="section-grid__intro">
       <SectionIntro {eyebrow} {heading} {body} />
     </div>
-    <div
-      class={`section-grid__grid ${columns === 3 ? "three-column" : "four-column"}`}
-    >
+    <div class={`section-grid__grid cols-${columns}`}>
       <slot />
     </div>
     {
@@ -43,8 +41,9 @@ const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
     margin: 0 0 1rem 0;
   }
 
-  .section-grid__grid.three-column,
-  .section-grid__grid.four-column {
+  .section-grid__grid.cols-2,
+  .section-grid__grid.cols-3,
+  .section-grid__grid.cols-4 {
     width: 100%;
     margin: 1rem 0;
     display: grid;
@@ -53,21 +52,25 @@ const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
   }
 
   @media screen and (min-width: 600px) {
-    .section-grid__grid.three-column {
+    .section-grid__grid.cols-2 {
       grid-template-columns: 1fr 1fr;
     }
 
-    .section-grid__grid.four-column {
+    .section-grid__grid.cols-3 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .section-grid__grid.cols-4 {
       grid-template-columns: 1fr 1fr;
     }
   }
 
   @media screen and (min-width: 1024px) {
-    .section-grid__grid.three-column {
+    .section-grid__grid.cols-3 {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .section-grid__grid.four-column {
+    .section-grid__grid.cols-4 {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }

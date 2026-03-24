@@ -36,6 +36,7 @@ import placeholder from "../../src/assets/placeholder.jpg";
   <SectionGrid
     heading="Don't take our word for it."
     body="Highly rated across Louisiana for service calls, projects, and generator installations"
+    columns={3}
   >
     {
       reviews.map((review) => {
@@ -66,7 +67,6 @@ import placeholder from "../../src/assets/placeholder.jpg";
     columns={4}
     cta={{ href: "#", secondary: true, label: "Explore our services" }}
   >
-    <!-- convert from ReviewBlock to ServiceCard (or other name) and map businessLines -->
     {
       businessLines.map((service) => {
         return (
