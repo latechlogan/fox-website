@@ -1,0 +1,33 @@
+---
+const { icon: Icon, heading, body } = Astro.props;
+---
+
+<div class="cta-block">
+  <Icon size="1.8rem" />
+  <strong class="cta-block__heading">{heading}</strong>
+  <p class="cta-block__body">{body}</p>
+  <slot name="cta" />
+</div>
+
+<style>
+  .cta-block {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cta-block > *:nth-child(1) {
+    margin: 0.5rem 0 0 0;
+  }
+
+  .cta-block__heading {
+    font-size: var(--text-2xl);
+    margin: 0.5rem 0 0 0;
+  }
+</style>
