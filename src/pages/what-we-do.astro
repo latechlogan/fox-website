@@ -1,6 +1,13 @@
 ---
-import SectionGrid from "../components/SectionGrid.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionGrid from "../components/SectionGrid.astro";
+import CTABlock from "../components/grid-blocks/CTABlock.astro";
+import { FaStarOfLife } from "react-icons/fa";
+import Hero from "../components/Hero.astro";
+import FAQ from "../components/FAQ.astro";
+import { businessLinesFAQ } from "../data/faq";
+
+import placeholder from "../assets/placeholder.jpg";
 ---
 
 <BaseLayout>
@@ -8,5 +15,56 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     eyebrow="Services"
     heading="What we bring to your neighborhood"
     body="Whether it's a midnight outage or a new build from the ground up, we handle it all. Same reliable service, same family values, no matter the job."
+    columns={2}
+  >
+    <CTABlock
+      icon={FaStarOfLife}
+      heading="Service"
+      body="Electrical issues don't keep business hours. When something goes wrong at home, we show up, figure it out, and get it fixed right."
+    >
+      <div slot="cta" class="btn-group">
+        <a href="" class="btn btn-primary">Book a service call</a>
+        <a href="" class="btn btn-secondary">Learn about service calls</a>
+      </div>
+    </CTABlock>
+    <CTABlock
+      icon={FaStarOfLife}
+      heading="Project"
+      body="From new construction to full rewires and generator installations, we handle electrical work of any scale across Louisiana."
+    >
+      <div slot="cta" class="btn-group">
+        <a href="" class="btn btn-primary">Start a project conversation</a>
+        <a href="" class="btn btn-secondary">Learn about projects</a>
+      </div>
+    </CTABlock>
+  </SectionGrid>
+
+  <Hero
+    eyebrow="Reliable"
+    heading="Family-owned means we do it right"
+    body="We treat every job like it's our own home. That's the difference between a contractor and a neighbor you can trust."
+    image={placeholder}
+    imageAlt=""
+  >
+    <ul slot="bullets">
+      <li>Licensed and insured for your protection</li>
+      <li>Safety and quality on every job</li>
+      <li>Built on trust across Louisiana</li>
+    </ul>
+    <div slot="buttons" class="btn-group">
+      <a href="" class="btn btn-primary">Book a service call</a>
+      <a href="" class="btn btn-secondary">Our story</a>
+    </div>
+  </Hero>
+
+  <FAQ
+    body="Find answers to what customers ask us most about our work."
+    faqs={businessLinesFAQ}
+    outro={{
+      heading: "Still have questions?",
+      body: "We're happy to help. Reach out and we'll get you sorted.",
+      btnHref: "#",
+      btnLabel: "Contact us",
+    }}
   />
 </BaseLayout>

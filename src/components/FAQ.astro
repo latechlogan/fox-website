@@ -1,0 +1,74 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+const { body, faqs, outro } = Astro.props;
+---
+
+<div class="fw-container">
+  <div class="mw-container faq">
+    <div class="faq-intro">
+      <SectionIntro heading="Questions" body={body} />
+    </div>
+
+    <dl class="faq-content">
+    {
+      faqs.map(({ question, answer }) => (
+          <dt class="faq__question">
+            <strong>{question}</strong>
+          </dt>
+          <dd class="faq__answer">{answer}</dd>
+      ))
+    }
+    </dl>
+
+    <div class="faq-outro">
+      <strong class="text-2xl faq-outro__heading">{outro.heading}</strong>
+      <p class="faq-outro__body">{outro.body}</p>
+      <a href={outro.btnHref} class="btn btn-secondary faq-outro__btn">{outro.btnLabel}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mw-container {
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .faq-intro {
+    text-align: center;
+    margin: 0 0 2rem 0;
+  }
+
+  .faq__question {
+    margin: 1.5rem 0 0 0;
+  }
+
+  .faq__answer {
+    margin: 0.5rem 0 0 0;
+  }
+
+  .faq-content {
+    margin: 0 0 2rem 0;
+  }
+
+  .faq-outro {
+    text-align: center;
+  }
+
+  .faq-outro__heading {
+    display: block;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .faq-outro__btn {
+    margin: 2rem 0 0 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .faq-intro,
+    .faq-content {
+      margin: 0 0 4rem 0;
+    }
+  }
+</style>
