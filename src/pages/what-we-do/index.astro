@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionGrid from "../components/SectionGrid.astro";
-import CTABlock from "../components/grid-blocks/CTABlock.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionGrid from "../../components/SectionGrid.astro";
+import CTABlock from "../../components/grid-blocks/CTABlock.astro";
 import { FaStarOfLife } from "react-icons/fa";
-import Hero from "../components/Hero.astro";
-import FAQ from "../components/FAQ.astro";
-import { businessLinesFAQ } from "../data/faq";
+import Hero from "../../components/Hero.astro";
+import FAQ from "../../components/FAQ.astro";
+import { businessLinesFAQ } from "../../data/faq";
 
-import placeholder from "../assets/placeholder.jpg";
+import placeholder from "../../assets/placeholder.jpg";
 ---
 
 <BaseLayout>
@@ -23,7 +23,9 @@ import placeholder from "../assets/placeholder.jpg";
       body="Electrical issues don't keep business hours. When something goes wrong at home, we show up, figure it out, and get it fixed right."
     >
       <div slot="cta" class="btn-group">
-        <a href="" class="btn btn-primary">Book a service call</a>
+        <a href="/what-we-do/service-calls" class="btn btn-primary"
+          >Book a service call</a
+        >
         <a href="" class="btn btn-secondary">Learn about service calls</a>
       </div>
     </CTABlock>
