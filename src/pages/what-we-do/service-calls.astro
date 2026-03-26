@@ -1,12 +1,27 @@
 ---
-import SectionIntro from "../../components/SectionIntro.astro";
+import IconBlock from "../../components/grid-blocks/IconBlock.astro";
+import SectionGrid from "../../components/SectionGrid.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { serviceCallItems } from "../../data/iconBlocks";
 ---
 
-<div class="fw-container">
-  <div class="mw-container service-calls">
-    <SectionIntro
-      heading="Service Calls"
-      body="This is a placeholder for the service calls page content."
-    />
-  </div>
-</div>
+<BaseLayout>
+  <SectionGrid
+    eyebrow="Service"
+    heading="We handle the electrical problems that matter"
+    body="Whether it's a flickering light or a complete power loss, we've seen it all and fixed it all. Our service calls cover everything from simple repairs to complex troubleshooting."
+    columns={4}
+  >
+    {
+      serviceCallItems.map((service) => {
+        return (
+          <IconBlock
+            icon={service.icon}
+            heading={service.heading}
+            body={service.body}
+          />
+        );
+      })
+    }
+  </SectionGrid>
+</BaseLayout>
