@@ -8,6 +8,9 @@ import { MdLightbulbOutline } from "react-icons/md";
 import { MdOutlineEmergency } from "react-icons/md";
 import { MdOutlineElectricalServices } from "react-icons/md";
 import { MdOutlineOutlet } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaShippingFast } from "react-icons/fa";
+import { FaHouseChimney } from "react-icons/fa6";
 
 type IconBlock = {
   icon: ComponentType;
@@ -58,5 +61,23 @@ export const serviceCallItems: IconBlock[] = [
     icon: MdOutlineEmergency,
     heading: "Emergency calls",
     body: "Electrical emergencies don't keep business hours. We're ready to handle urgent and dangerous situations safely, whenever you need us.",
+  },
+];
+
+export const serviceCallSteps: IconBlock[] = [
+  {
+    icon: FaPhoneAlt,
+    heading: "Call or book online",
+    body: "Tell us what's happening and when you need us. We'll find a time that works for you.",
+  },
+  {
+    icon: FaShippingFast,
+    heading: "We arrive and assess",
+    body: "We walk through the problem with you, explain what we found, and give you honest pricing before any work begins.",
+  },
+  {
+    icon: FaHouseChimney,
+    heading: "We fix it right",
+    body: "The job gets done properly, safely, and with the same care we'd give our own home.",
   },
 ];

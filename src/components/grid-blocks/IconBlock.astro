@@ -1,11 +1,18 @@
 ---
-const { icon: Icon, heading, body } = Astro.props;
+const {
+  icon: Icon,
+  heading,
+  body,
+  align = "center",
+  card = false,
+} = Astro.props;
 ---
 
-<div class="icon-block">
+<div class={`icon-block ${align} ${card ? "card" : ""}`}>
   <Icon size="2.4rem" />
   <strong class="icon-block__heading">{heading}</strong>
   <p class="icon-block__body">{body}</p>
+  <slot name="cta" />
 </div>
 
 <style>
@@ -20,6 +27,17 @@ const { icon: Icon, heading, body } = Astro.props;
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  .icon-block.left {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .icon-block.card {
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
   }
 
   .icon-block__heading {

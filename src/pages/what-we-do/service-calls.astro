@@ -3,6 +3,7 @@ import IconBlock from "../../components/grid-blocks/IconBlock.astro";
 import SectionGrid from "../../components/SectionGrid.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { serviceCallItems } from "../../data/iconBlocks";
+import { serviceCallSteps } from "../../data/iconBlocks";
 ---
 
 <BaseLayout>
@@ -24,4 +25,46 @@ import { serviceCallItems } from "../../data/iconBlocks";
       })
     }
   </SectionGrid>
+
+  <SectionGrid
+    eyebrow="Simple"
+    heading="Three steps to fixed"
+    body="We make it easy when things go wrong."
+  >
+    {
+      serviceCallSteps.map((step, index) => {
+        if (index === 0) {
+          return (
+            <>
+              <IconBlock
+                icon={step.icon}
+                heading={step.heading}
+                body={step.body}
+                align="left"
+                card={true}
+              >
+                <div class="btn-group" slot="cta">
+                  <a href="#" class="btn btn-primary">
+                    Book a service call
+                  </a>
+                </div>
+              </IconBlock>
+            </>
+          );
+        } else {
+          return (
+            <IconBlock
+              icon={step.icon}
+              heading={step.heading}
+              body={step.body}
+              align="left"
+              card={true}
+            />
+          );
+        }
+      })
+    }
+  </SectionGrid>
 </BaseLayout>
+
+<style></style>
