@@ -4,6 +4,7 @@ import SectionGrid from "../../components/SectionGrid.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { serviceCallItems } from "../../data/iconBlocks";
 import { serviceCallSteps } from "../../data/iconBlocks";
+import ReviewCarousel from "../../components/ReviewCarousel.jsx";
 ---
 
 <BaseLayout>
@@ -65,6 +66,8 @@ import { serviceCallSteps } from "../../data/iconBlocks";
       })
     }
   </SectionGrid>
+
+  <ReviewCarousel client:visible />
 </BaseLayout>
 
 <style></style>
