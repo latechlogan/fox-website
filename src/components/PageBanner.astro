@@ -1,0 +1,36 @@
+---
+const { eyebrow, heading, body, align = "center" } = Astro.props;
+---
+
+<div class="fw-container">
+  <div class={`mw-container page-banner page-banner-${align}`}>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h2 class="text-4xl text-heading">{heading}</h2>
+    <p class="text-base">{body}</p>
+    <slot name="cta" />
+  </div>
+</div>
+
+<style>
+  .page-banner {
+    max-width: 900px;
+  }
+
+  .page-banner-center {
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+
+  .text-heading {
+    white-space: pre-wrap;
+    margin: 0 0 1rem 0;
+  }
+
+  .text-base {
+    margin: 0 0 1rem 0;
+  }
+</style>
