@@ -1,0 +1,31 @@
+---
+import styles from "./ReviewStyles.module.css";
+import { FaStar } from "react-icons/fa";
+const { review } = Astro.props;
+---
+
+<div class="fw-container">
+  <div class={`${styles.reviewCarousel} mw-container`}>
+    <div class={styles.carouselContent}>
+      <div class={styles.starWrapper}>
+        {Array.from({ length: review.stars }, (_, i) => <FaStar />)}
+      </div>
+
+      <p class={styles.reviewBody}>"{review.body}"</p>
+
+      <div class={styles.reviewer}>
+        {
+          review.photo && (
+            <div class="reviewer__photo-wrapper">
+              <img src={review.photo.src} alt="" class={styles.reviewerPhoto} />
+            </div>
+          )
+        }
+        <div class={styles.reviewerInfoWrapper}>
+          <strong class="reviewer__name text-base">{review.name}</strong>
+          <p class="reviewer__desc text-base">{review.description}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

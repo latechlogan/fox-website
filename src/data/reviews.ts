@@ -36,3 +36,14 @@ export const reviews: Review[] = [
     photo: undefined,
   },
 ];
+
+export const projectReviews: Review[] = [
+  {
+    id: 1,
+    stars: 5,
+    body: "They didn't just wire our new office building—they understood what we needed before we even finished explaining it. That kind of attention is rare, and it's why we call them first for everything.",
+    name: "Margaret Thibodeaux",
+    description: "Business Owner, Baton Rouge",
+    photo: undefined,
+  },
+];

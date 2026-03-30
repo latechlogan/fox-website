@@ -7,6 +7,9 @@ import placeholder from "../../assets/placeholder.jpg";
 import SectionGrid from "../../components/SectionGrid.astro";
 import { projectDisciplines } from "../../data/iconBlocks";
 import IconBlock from "../../components/grid-blocks/IconBlock.astro";
+import ReviewFeatured from "../../components/ReviewFeatured.astro";
+import { projectReviews } from "../../data/reviews";
+const featuredReview = projectReviews[0];
 ---
 
 <BaseLayout>
@@ -134,7 +137,8 @@ import IconBlock from "../../components/grid-blocks/IconBlock.astro";
       <a href="#" class="btn btn-secondary">Start a project conversation</a>
     </div>
   </SectionGrid>
-  <!-- FeaturedReview -->
+
+  <ReviewFeatured review={featuredReview} />
 </BaseLayout>
 
 <style>

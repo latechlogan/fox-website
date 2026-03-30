@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useState } from "react";
-import styles from "./ReviewCarousel.module.css";
+import styles from "./ReviewStyles.module.css";
 
 export default function ReviewCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
