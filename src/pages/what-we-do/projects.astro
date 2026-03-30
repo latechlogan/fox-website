@@ -1,0 +1,232 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+import SectionIntro from "../../components/SectionIntro.astro";
+import { Image } from "astro:assets";
+
+import placeholder from "../../assets/placeholder.jpg";
+---
+
+<BaseLayout>
+  <PageBanner
+    eyebrow="Building"
+    heading="Electrical work built to last"
+    body="From new construction to full commercial builds, we handle every phase of the job — temporary power, rough-in, trim out, final inspection, and commissioning. Big projects done right, by a family that takes pride in the work."
+  >
+    <div class="btn-group page-banner__btn-group" slot="cta">
+      <a href="#" class="btn btn-primary">Start a project conversation</a>
+    </div>
+  </PageBanner>
+
+  <div class="fw-container">
+    <div class="mw-container portfolio">
+      <div class="portfolio__intro">
+        <SectionIntro
+          eyebrow="Portfolio"
+          heading="Work we're proud of"
+          body="These projects show what we do best. Careful planning, skilled execution, and results that hold up long after we're gone."
+        />
+      </div>
+
+      <div class="portfolio__content">
+        <div class="project-card">
+          <div class="project-card__copy">
+            <h3 class="project-card__heading">Project Name Here</h3>
+            <div class="project-card__tags">
+              <span>Residential</span>
+              <span>Ground-up</span>
+            </div>
+            <p>
+              Complete electrical system for a 3,500 square foot home in
+              Ascension Parish. We ran all wiring, installed the main panel, and
+              coordinated with the general contractor from foundation to move-in
+              day.
+            </p>
+          </div>
+          <Image src={placeholder} alt="" class="project-card__img" />
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__copy">
+            <h3 class="project-card__heading">Project Name Here</h3>
+            <div class="project-card__tags">
+              <span>Upgrade</span>
+            </div>
+            <p>
+              Rewired a 15,000 square foot office building in downtown Lafayette
+              with new LED lighting, updated panels, and backup generator
+              installation. The business stayed open throughout the project.
+            </p>
+          </div>
+          <Image src={placeholder} alt="" class="project-card__img" />
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__copy">
+            <h3 class="project-card__heading">Project Name Here</h3>
+            <div class="project-card__tags">
+              <span>Commercial</span>
+            </div>
+            <p>
+              Extended power distribution across 40 acres for a growing
+              operation near Breaux Bridge. We installed three new substations
+              and ran underground conduit to handle future equipment additions.
+            </p>
+          </div>
+          <Image src={placeholder} alt="" class="project-card__img" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fw-container">
+    <div class="mw-container number-story">
+      <div class="number-story__copy">
+        <SectionIntro
+          eyebrow="Numbers"
+          heading="The work speaks for itself"
+          body="These aren't just statistics. They're homes that work, businesses that run, and families that trust us to get it right."
+        />
+        <div class="btn-group">
+          <a href="#" class="btn btn-secondary">Start a project conversation</a>
+        </div>
+      </div>
+      <div class="number-story__numbers">
+        <span class="number-block">
+          <strong class="big-number text-5xl">500+</strong><br />
+          Projects completed
+        </span>
+        <span class="number-block">
+          <strong class="big-number text-5xl">30</strong><br />
+          Years in business
+        </span>
+        <span class="number-block">
+          <strong class="big-number text-5xl">70%</strong><br />
+          Repeat customers
+        </span>
+        <span class="number-block">
+          <strong class="big-number text-5xl">4.9</strong><br />
+          Avg Google rating
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SectionGrid -->
+  <!-- FeaturedReview -->
+</BaseLayout>
+
+<style>
+  .portfolio__intro {
+    text-align: center;
+    margin: 0 0 4rem 0;
+  }
+
+  .portfolio__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .project-card {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .project-card__copy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .project-card__heading {
+    font-size: var(--text-2xl);
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-card__tags span {
+    font-size: var(--text-sm);
+    padding: 0.125rem 0.5rem;
+    background-color: #eee;
+    border-radius: 0.25rem;
+  }
+
+  .project-card__img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .btn-group.page-banner__btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ===== number-story ========== */
+
+  .number-story__copy {
+    width: 100%;
+    margin: 0 0 3rem 0;
+  }
+
+  .number-story__numbers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2rem;
+  }
+
+  .number-block {
+    line-height: 1.5;
+    display: block;
+    padding: 0 0 0.25rem 1rem;
+    border-left: 1px solid #ccc;
+  }
+
+  @media screen and (min-width: 768px) {
+    .number-story {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .number-block {
+      padding-left: 2rem;
+    }
+  }
+</style>
