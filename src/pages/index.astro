@@ -65,7 +65,6 @@ import placeholder from "../../src/assets/placeholder.jpg";
     heading="Everything electrical, handled by people who care."
     body="Whether it's a flickering outlet or a full commercial build, we handle it all — from routine repairs to large-scale projects, generator installations to panel upgrades. Whatever the job, we bring the same skill and the same standard."
     columns={4}
-    cta={{ href: "#", secondary: true, label: "Explore our services" }}
   >
     {
       businessLines.map((service) => {
@@ -78,6 +77,9 @@ import placeholder from "../../src/assets/placeholder.jpg";
         );
       })
     }
+    <div class="btn-group" slot="cta">
+      <a href="#" class="btn btn-secondary">Explore our services</a>
+    </div>
   </SectionGrid>
 
   <Hero

@@ -81,3 +81,21 @@ export const serviceCallSteps: IconBlock[] = [
     body: "The job gets done properly, safely, and with the same care we'd give our own home.",
   },
 ];
+
+export const projectDisciplines: IconBlock[] = [
+  {
+    icon: FaShippingFast,
+    heading: "Listen and design right",
+    body: "We ask the right questions upfront so your electrical system matches exactly what you need.",
+  },
+  {
+    icon: FaShippingFast,
+    heading: "Build to code, every time",
+    body: "Inspections pass because we build them to pass, with every connection documented and verified.",
+  },
+  {
+    icon: FaShippingFast,
+    heading: "Show up and deliver",
+    body: "We keep our word on timing and coordinate smoothly with your other trades.",
+  },
+];

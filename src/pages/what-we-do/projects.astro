@@ -3,8 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageBanner from "../../components/PageBanner.astro";
 import SectionIntro from "../../components/SectionIntro.astro";
 import { Image } from "astro:assets";
-
 import placeholder from "../../assets/placeholder.jpg";
+import SectionGrid from "../../components/SectionGrid.astro";
+import { projectDisciplines } from "../../data/iconBlocks";
+import IconBlock from "../../components/grid-blocks/IconBlock.astro";
 ---
 
 <BaseLayout>
@@ -13,7 +15,7 @@ import placeholder from "../../assets/placeholder.jpg";
     heading="Electrical work built to last"
     body="From new construction to full commercial builds, we handle every phase of the job — temporary power, rough-in, trim out, final inspection, and commissioning. Big projects done right, by a family that takes pride in the work."
   >
-    <div class="btn-group page-banner__btn-group" slot="cta">
+    <div class="btn-group center" slot="cta">
       <a href="#" class="btn btn-primary">Start a project conversation</a>
     </div>
   </PageBanner>
@@ -112,7 +114,26 @@ import placeholder from "../../assets/placeholder.jpg";
     </div>
   </div>
 
-  <!-- SectionGrid -->
+  <SectionGrid
+    eyebrow="How"
+    heading="We build projects that last"
+    body="Every project gets our full attention from the first conversation to the final walkthrough. We don't cut corners, and we don't leave anything to chance."
+  >
+    {
+      projectDisciplines.map((discipline) => {
+        return (
+          <IconBlock
+            icon={discipline.icon}
+            heading={discipline.heading}
+            body={discipline.body}
+          />
+        );
+      })
+    }
+    <div class="btn-group center" slot="cta">
+      <a href="#" class="btn btn-secondary">Start a project conversation</a>
+    </div>
+  </SectionGrid>
   <!-- FeaturedReview -->
 </BaseLayout>
 
@@ -182,13 +203,6 @@ import placeholder from "../../assets/placeholder.jpg";
     aspect-ratio: 16 / 9;
     overflow: hidden;
     object-fit: cover;
-  }
-
-  .btn-group.page-banner__btn-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
 
   /* ===== number-story ========== */

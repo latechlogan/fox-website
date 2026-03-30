@@ -1,6 +1,6 @@
 ---
 import SectionIntro from "./SectionIntro.astro";
-const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
+const { eyebrow, heading, body, columns = 3 } = Astro.props;
 ---
 
 <div class="fw-container">
@@ -11,18 +11,7 @@ const { eyebrow, heading, body, columns = 3, cta } = Astro.props;
     <div class={`section-grid__grid cols-${columns}`}>
       <slot />
     </div>
-    {
-      cta && (
-        <div class="section-grid__cta btn-group">
-          <a
-            href={cta.href}
-            class={`btn ${cta.secondary ? "btn-secondary" : ""}`}
-          >
-            {cta.label}
-          </a>
-        </div>
-      )
-    }
+    <slot name="cta" />
   </div>
 </div>
 
