@@ -23,13 +23,17 @@ const { body, faqs, outro } = Astro.props;
       }
     </dl>
 
-    <div class="faq-outro">
-      <strong class="text-2xl faq-outro__heading">{outro.heading}</strong>
-      <p class="faq-outro__body">{outro.body}</p>
-      <a href={outro.btnHref} class="btn btn-secondary faq-outro__btn"
-        >{outro.btnLabel}</a
-      >
-    </div>
+    {
+      outro && (
+        <div class="faq-outro">
+          <strong class="text-2xl faq-outro__heading">{outro.heading}</strong>
+          <p class="faq-outro__body">{outro.body}</p>
+          <a href={outro.btnHref} class="btn btn-secondary faq-outro__btn">
+            {outro.btnLabel}
+          </a>
+        </div>
+      )
+    }
   </div>
 </div>
 
