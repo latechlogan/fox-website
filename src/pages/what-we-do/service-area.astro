@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+import ReviewCarousel from "../../components/ReviewCarousel";
+import SectionGrid from "../../components/SectionGrid.astro";
+import CTABlock from "../../components/grid-blocks/CTABlock.astro";
+import { FaStarOfLife } from "react-icons/fa";
+import Image from "astro/components/Image.astro";
+import placeholder from "../../assets/placeholder.jpg";
+---
+
+<BaseLayout>
+  <PageBanner
+    eyebrow="Community"
+    heading="Building on trust across Louisiana"
+    body="We've been serving Louisiana families and businesses for years, building relationships one job at a time. From the smallest repair to the biggest project, we treat every customer like a neighbor — because that's exactly what they are."
+  >
+    <div class="btn-group center" slot="cta">
+      <a href="#" class="btn btn-primary">Book a service call</a>
+      <a href="#" class="btn btn-secondary">Our story</a>
+    </div>
+  </PageBanner>
+
+  <!-- <div class="fw-container">
+    <div class="mw-container">
+      <Image src={placeholder} alt="" class="service-area__img" />
+    </div>
+  </div> -->
+
+  <ReviewCarousel client:visible />
+
+  <SectionGrid
+    eyebrow="Services"
+    heading="What we bring to your neighborhood"
+    body="Whether it's a midnight outage or a new build from the ground up, we handle it all. Same reliable service, same family values, no matter the job."
+    columns={2}
+  >
+    <CTABlock
+      icon={FaStarOfLife}
+      heading="Service"
+      body="Electrical issues don't keep business hours. When something goes wrong at home, we show up, figure it out, and get it fixed right."
+    >
+      <div slot="cta" class="btn-group">
+        <a href="#" class="btn btn-primary">Book a service call</a>
+        <a href="/what-we-do/service-calls" class="btn btn-secondary"
+          >Learn about service calls</a
+        >
+      </div>
+    </CTABlock>
+    <CTABlock
+      icon={FaStarOfLife}
+      heading="Project"
+      body="From new construction to full rewires and generator installations, we handle electrical work of any scale across Louisiana."
+    >
+      <div slot="cta" class="btn-group">
+        <a href="#" class="btn btn-primary">Start a project conversation</a>
+        <a href="/what-we-do/projects" class="btn btn-secondary"
+          >Learn about projects</a
+        >
+      </div>
+    </CTABlock>
+  </SectionGrid>
+</BaseLayout>
+
+<style>
+  .service-area__img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+</style>
