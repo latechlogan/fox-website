@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionGrid from "../components/SectionGrid.astro";
+import IconBlock from "../components/grid-blocks/IconBlock.astro";
+import { generatorNeeds } from "../data/iconBlocks";
+import TextBlock from "../components/grid-blocks/TextBlock.astro";
+import { generatorBenefits } from "../data/textBlocks";
+import CTABlock from "../components/grid-blocks/CTABlock.astro";
+import { FaStarOfLife } from "react-icons/fa";
+import ReviewCarousel from "../components/ReviewCarousel";
+---
+
+<BaseLayout>
+  <SectionGrid
+    eyebrow="Reality"
+    heading="Louisiana weather demands more than hope"
+    body="Brutal summer heat, thunderstorms, hurricanes, and even ice storms are part of living here. When the grid goes down, your family needs power that doesn't depend on the utility company."
+    columns={3}
+  >
+    {
+      generatorNeeds.map((need) => {
+        return (
+          <IconBlock icon={need.icon} heading={need.heading} body={need.body} />
+        );
+      })
+    }
+    <div class="btn-group" slot="cta">
+      <a href="#" class="btn btn-primary">Call about generators</a>
+    </div>
+  </SectionGrid>
+
+  <SectionGrid
+    eyebrow="Benefits"
+    heading="What a generator gives you"
+    body="More than just lights and air conditioning"
+    columns={3}
+  >
+    {
+      generatorBenefits.map((benefit) => {
+        return (
+          <TextBlock
+            heading={benefit.heading}
+            body={benefit.body}
+            align="left"
+            card={true}
+          />
+        );
+      })
+    }
+  </SectionGrid>
+
+  <SectionGrid
+    eyebrow="Support"
+    heading="We handle it all"
+    body="From the day we install your generator to years down the road, Fox Family Electric is here. We know your equipment, we know your home, and we show up when you need us."
+    columns={2}
+  >
+    <CTABlock
+      icon={FaStarOfLife}
+      heading="Whole home backup power"
+      body="Automatic standby generators kick on the moment power fails. Running on natural gas or propane, they keep your entire home running without you lifting a finger."
+    >
+      <div slot="cta" class="btn-group">
+        <a href="#" class="btn btn-primary">Call to get started</a>
+      </div>
+    </CTABlock>
+    <CTABlock
+      icon={FaStarOfLife}
+      heading="Backup power for your business"
+      body="When the power goes out, your business can't afford to stop. We install and maintain commercial generators sized for your operation, so you stay open and your equipment stays protected."
+    >
+      <div slot="cta" class="btn-group">
+        <a href="#" class="btn btn-primary">Call to get started</a>
+      </div>
+    </CTABlock>
+  </SectionGrid>
+
+  <ReviewCarousel client:visible />
+</BaseLayout>

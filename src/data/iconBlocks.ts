@@ -11,6 +11,9 @@ import { MdOutlineOutlet } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaShippingFast } from "react-icons/fa";
 import { FaHouseChimney } from "react-icons/fa6";
+import { BsPlug } from "react-icons/bs";
+import { BsLightbulbOff } from "react-icons/bs";
+import { BsTropicalStorm } from "react-icons/bs";
 
 type IconBlock = {
   icon: ComponentType;
@@ -97,5 +100,41 @@ export const projectDisciplines: IconBlock[] = [
     icon: FaShippingFast,
     heading: "Show up and deliver",
     body: "We keep our word on timing and coordinate smoothly with your other trades.",
+  },
+];
+
+export const generatorNeeds: IconBlock[] = [
+  {
+    icon: BsPlug,
+    heading: "Outages happen more than you think",
+    body: "Louisiana ranks among the top states for outages per customer and leads the country in how long those outages last. It's not a matter of if, it's when.",
+  },
+  {
+    icon: BsLightbulbOff,
+    heading: "Don't Leave Your Family in the Dark",
+    body: "Food spoils. Extreme heat or cold becomes dangerous. Kids get scared. A generator changes everything when the lights go out.",
+  },
+  {
+    icon: BsTropicalStorm,
+    heading: "Peace of mind has a price worth paying",
+    body: "Knowing you're prepared lets you sleep through the storm instead of lying awake wondering what comes next.",
+  },
+];
+
+export const generatorBenefits: IconBlock[] = [
+  {
+    icon: BsPlug,
+    heading: "Outages happen more than you think",
+    body: "Louisiana ranks among the top states for outages per customer and leads the country in how long those outages last. It's not a matter of if, it's when.",
+  },
+  {
+    icon: BsPlug,
+    heading: "Outages happen more than you think",
+    body: "Louisiana ranks among the top states for outages per customer and leads the country in how long those outages last. It's not a matter of if, it's when.",
+  },
+  {
+    icon: BsPlug,
+    heading: "Outages happen more than you think",
+    body: "Louisiana ranks among the top states for outages per customer and leads the country in how long those outages last. It's not a matter of if, it's when.",
   },
 ];
