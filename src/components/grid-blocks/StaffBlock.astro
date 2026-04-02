@@ -1,0 +1,36 @@
+---
+import Image from "astro/components/Image.astro";
+import placeholder from "../../assets/placeholder.jpg";
+const { photo, name, role, description } = Astro.props;
+---
+
+<div class="staff-block">
+  <Image src={placeholder} alt="" class="staff-block__image" />
+  <strong class="staff-block__name">{name}</strong>
+  <span class="staff-block__role">{role}</span>
+  <p class="staff-block__desc">{description}</p>
+</div>
+
+<style>
+  .staff-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .staff-block__image {
+    width: 80px;
+    aspect-ratio: 1 /1;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+  }
+
+  .staff-block__name {
+    font-size: var(--text-lg);
+  }
+
+  .staff-block__role {
+    margin-bottom: 1rem;
+  }
+</style>

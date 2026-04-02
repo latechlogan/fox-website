@@ -1,10 +1,12 @@
 ---
 import SectionIntro from "./SectionIntro.astro";
-const { eyebrow, heading, body, columns = 3 } = Astro.props;
+const { eyebrow, heading, body, align = "center", columns = 3 } = Astro.props;
 ---
 
 <div class="fw-container">
-  <div class="mw-container section-grid">
+  <div
+    class={`mw-container section-grid ${align === "center" ? "section-grid--center" : "section-grid--left"}`}
+  >
     <div class="section-grid__intro">
       <SectionIntro {eyebrow} {heading} {body} />
     </div>
@@ -16,7 +18,7 @@ const { eyebrow, heading, body, columns = 3 } = Astro.props;
 </div>
 
 <style>
-  .section-grid {
+  .section-grid--center {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -24,10 +26,22 @@ const { eyebrow, heading, body, columns = 3 } = Astro.props;
     align-items: center;
   }
 
+  .section-grid--left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
   .section-grid__intro {
     text-align: center;
     max-width: 900px;
     margin: 0 0 1rem 0;
+  }
+
+  .section-grid--left .section-grid__intro {
+    text-align: left;
   }
 
   .section-grid__grid.cols-2,
