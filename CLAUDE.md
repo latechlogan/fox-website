@@ -26,18 +26,22 @@ Requires Node >= 22.12.0.
 src/
 ├── assets/          # Images (imported via astro:assets for optimization)
 ├── components/
-│   ├── grid-blocks/ # IconBlock, CTABlock, ReviewBlock — used inside SectionGrid
-│   └── *.astro      # Section-level components (Hero, SectionGrid, Header, etc.)
+│   ├── grid-blocks/ # IconBlock, CTABlock, ReviewBlock, TextBlock, StaffBlock — used inside SectionGrid
+│   └── *.astro      # Section-level components (Hero, SectionGrid, Header, FAQ, Team, etc.)
 ├── css/
 │   └── global.css   # CSS reset + fluid type scale + utility/container classes
-├── data/            # Typed data arrays (reviews, logos, iconBlocks, faq)
+├── data/            # Typed data arrays (reviews, logos, iconBlocks, faq, team, textBlocks)
 ├── layouts/
 │   └── BaseLayout.astro  # Root layout (Header, GlobalCTA, Footer, global styles)
 └── pages/
     ├── index.astro
+    ├── about-us.astro
+    ├── faq.astro
+    ├── generators.astro
     └── what-we-do/
         ├── index.astro
-        └── service-calls.astro
+        ├── service-calls.astro
+        └── projects.astro
 ```
 
 ## Key Conventions
