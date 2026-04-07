@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import { Image } from "astro:assets";
+import liveswitchLogo from "../assets/liveswitch-logo.png";
+import placeholder from "../assets/placeholder.jpg";
+import ReviewCarousel from "../components/ReviewCarousel";
+import TextBlock from "../components/grid-blocks/TextBlock.astro";
+import SectionGrid from "../components/SectionGrid.astro";
+import IconBlock from "../components/grid-blocks/IconBlock.astro";
+import { threeEasySteps } from "../data/iconBlocks";
+---
+
+<BaseLayout>
+  <Hero
+    eyebrow="Innovation"
+    heading="Get your estimate faster. No visit required."
+    body="With LiveSwitch, we assess your job through a live video call so you can get a quote faster and skip the dispatch fee. Just show us what you're working with and we'll take it from there."
+    image={placeholder}
+    imageAlt="LiveSwitch video call assessment"
+  >
+    <Image
+      slot="logo"
+      src={liveswitchLogo}
+      alt="LiveSwitch logo"
+      class="featured-logo"
+    />
+    <Fragment slot="buttons">
+      <a href="#" class="btn">Schedule a call</a>
+      <a href="#" class="btn btn-secondary">Learn how it works</a>
+    </Fragment>
+  </Hero>
+
+  <div class="fw-container">
+    <div class="mw-container benefit-story">
+      <div class="benefit-story__image">
+        <Image src={placeholder} alt="" />
+      </div>
+      <div class="benefit-story__benefits">
+        <TextBlock
+          heading="No waiting around"
+          body="Show us what you're working with over a quick video call and we'll get you a quote without scheduling an in-person visit."
+          align="left"
+        />
+        <TextBlock
+          heading="Reduced dispatch fees on your estimate"
+          body="When we don't have to roll a truck just to take a look, we can pass that savings on to you."
+          align="left"
+        />
+        <TextBlock
+          heading="Your Quote Starts With One Call"
+          body="A quick video call is all it takes for our experienced team to assess your job and get you an accurate quote."
+          align="left"
+        />
+        <TextBlock
+          heading="We Work Around Your Schedule"
+          body="Whether you're home or running a business, we fit the call around your day, not the other way around."
+          align="left"
+        />
+      </div>
+    </div>
+  </div>
+
+  <SectionGrid
+    eyebrow="Simple"
+    heading="Three easy steps"
+    body="From booking to estimate in minutes"
+  >
+    {
+      threeEasySteps.map((step, index) => {
+        return index === 0 ? (
+          <IconBlock
+            icon={step.icon}
+            heading={step.heading}
+            body={step.body}
+            align="left"
+            card={true}
+          >
+            <div class="btn-group" slot="cta">
+              <a href="#" class="btn btn-primary">
+                Book online
+              </a>
+            </div>
+          </IconBlock>
+        ) : (
+          <IconBlock
+            icon={step.icon}
+            heading={step.heading}
+            body={step.body}
+            align="left"
+            card={true}
+          />
+        );
+      })
+    }
+  </SectionGrid>
+
+  <ReviewCarousel client:visible />
+</BaseLayout>
+
+<style>
+  .featured-logo {
+    max-width: 200px;
+    display: inline-block;
+    margin: 1rem 0 0 0;
+  }
+
+  /* ===== benefit-story ===== */
+
+  .benefit-story__image {
+    width: 100%;
+    margin: 0 0 3rem 0;
+  }
+
+  .benefit-story__image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .benefit-story__benefits {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .benefit-story {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .benefit-story__image {
+      margin: 0;
+    }
+  }
+</style>

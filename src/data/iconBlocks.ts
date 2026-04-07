@@ -14,6 +14,10 @@ import { FaHouseChimney } from "react-icons/fa6";
 import { BsPlug } from "react-icons/bs";
 import { BsLightbulbOff } from "react-icons/bs";
 import { BsTropicalStorm } from "react-icons/bs";
+import { MdOutlineCalendarMonth } from "react-icons/md";
+import { MdOutlinePhonelinkRing } from "react-icons/md";
+import { MdOutlineReceiptLong } from "react-icons/md";
+
 
 type IconBlock = {
   icon: ComponentType;
@@ -136,5 +140,23 @@ export const generatorBenefits: IconBlock[] = [
     icon: BsPlug,
     heading: "Outages happen more than you think",
     body: "Louisiana ranks among the top states for outages per customer and leads the country in how long those outages last. It's not a matter of if, it's when.",
+  },
+];
+
+export const threeEasySteps: IconBlock[] = [
+  {
+    icon: MdOutlineCalendarMonth,
+    heading: "Book your video appointment online",
+    body: "Pick a time that works for you and we'll confirm your slot.",
+  },
+  {
+    icon: MdOutlinePhonelinkRing,
+    heading: "Connect with an electrician by video",
+    body: "Show us what needs fixing or building and we'll walk through it with you.",
+  },
+  {
+    icon: MdOutlineReceiptLong,
+    heading: "Get your estimate and next steps right away",
+    body: "No surprises, no delays, just straight answers and a clear path forward.",
   },
 ];
