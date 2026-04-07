@@ -17,7 +17,9 @@ import { BsTropicalStorm } from "react-icons/bs";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { MdOutlinePhonelinkRing } from "react-icons/md";
 import { MdOutlineReceiptLong } from "react-icons/md";
-
+import { MdOutlineAttachMoney } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
+import { MdOutlineHandshake } from "react-icons/md";
 
 type IconBlock = {
   icon: ComponentType;
@@ -158,5 +160,28 @@ export const threeEasySteps: IconBlock[] = [
     icon: MdOutlineReceiptLong,
     heading: "Get your estimate and next steps right away",
     body: "No surprises, no delays, just straight answers and a clear path forward.",
+  },
+];
+
+export const careerBenefits: IconBlock[] = [
+  {
+    icon: MdOutlineAttachMoney,
+    heading: "Pay that matches your skill",
+    body: "Competitive wages based on your experience and expertise.",
+  },
+  {
+    icon: MdOutlineHandyman,
+    heading: "Hands-on learning opportunities",
+    body: "Mentorship from experienced electricians who care about your development.",
+  },
+  {
+    icon: MdArrowOutward,
+    heading: "A clear path forward",
+    body: "We're invested in your growth and want to see you build a long career doing work you're proud of.",
+  },
+  {
+    icon: MdOutlineHandshake,
+    heading: "Straight talk and respect",
+    body: "A workplace built on honesty where your work and effort are valued.",
   },
 ];

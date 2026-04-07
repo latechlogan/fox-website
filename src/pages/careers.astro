@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import placeholder from "../assets/placeholder.jpg";
+import Team from "../components/Team.astro";
+import SectionGrid from "../components/SectionGrid.astro";
+import IconBlock from "../components/grid-blocks/IconBlock.astro";
+import { careerBenefits } from "../data/iconBlocks";
+---
+
+<BaseLayout>
+  <Hero
+    eyebrow="Careers"
+    heading="Why we're different"
+    body="Work here and you're not just clocking hours. You're part of a family business that treats people right, takes pride in the work, and invests in the people who show up every day."
+    image={placeholder}
+    imageAlt=""
+  >
+    <a href="#" class="btn btn-primary" slot="buttons">Apply now</a>
+  </Hero>
+
+  <Team />
+
+  <SectionGrid
+    eyebrow="Benefits"
+    heading="What we offer team members"
+    body="We believe good people deserve good benefits. Here's what you get when you join Fox Family Electric."
+    columns={4}
+  >
+    {
+      careerBenefits.map((benefit) => {
+        return (
+          <IconBlock
+            icon={benefit.icon}
+            heading={benefit.heading}
+            body={benefit.body}
+          />
+        );
+      })
+    }
+    <div slot="cta" class="btn-group center">
+      <a href="#" class="btn btn-primary">Apply Now</a>
+    </div>
+  </SectionGrid>
+</BaseLayout>
