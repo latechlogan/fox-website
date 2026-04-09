@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import FAQ from "../components/FAQ.astro";
+import { faqPayInvoice } from "../data/faq";
+---
+
+<BaseLayout>
+  <PageBanner
+    eyebrow="Secure"
+    heading="Pay your invoice"
+    body="Quick, easy, and secure. Get your account settled in just a few clicks."
+  />
+
+  <FAQ
+    heading="Questions"
+    body="Find answers to the most common questions about paying your invoice online."
+    faqs={faqPayInvoice}
+    outro={{
+      heading: "Still have questions?",
+      body: "Reach out directly and talk to us.",
+      btnHref: "/contact",
+      btnLabel: "Contact",
+    }}
+  />
+</BaseLayout>

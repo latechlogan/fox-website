@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import FAQ from "../components/FAQ.astro";
+import { faqMoxey } from "../data/faq";
+---
+
+<BaseLayout>
+  <PageBanner
+    eyebrow="Local"
+    heading="Pay with Moxey"
+    body="Supporting Louisiana businesses and keeping payments simple for our customers."
+  />
+
+  <FAQ
+    heading="Questions"
+    body="Everything you need to know about paying with Moxey."
+    faqs={faqMoxey}
+    outro={{
+      heading: "Still have questions?",
+      body: "Reach out directly and talk to us.",
+      btnHref: "/contact",
+      btnLabel: "Contact",
+    }}
+  />
+</BaseLayout>

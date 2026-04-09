@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import FAQ from "../components/FAQ.astro";
+import { faqBookOnline } from "../data/faq";
+---
+
+<BaseLayout>
+  <PageBanner
+    eyebrow="Simple"
+    heading="Schedule your service"
+    body="Pick a time that works for you and we'll take it from there."
+  />
+
+  <FAQ
+    heading="Questions"
+    body="Everything you need to know about booking with us"
+    faqs={faqBookOnline}
+    outro={{
+      heading: "Still have questions?",
+      body: "Reach out directly and talk to us.",
+      btnHref: "/contact",
+      btnLabel: "Contact",
+    }}
+  />
+</BaseLayout>

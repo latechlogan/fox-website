@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import FAQ from "../components/FAQ.astro";
+import { faqFinancing } from "../data/faq";
+---
+
+<BaseLayout>
+  <PageBanner
+    eyebrow="Financing"
+    heading="Pay how you want"
+    body="Quality electrical work shouldn't break the bank. We offer flexible financing options to fit your budget."
+  />
+
+  <FAQ
+    heading="Questions"
+    body="Everything you need to know about financing your electrical work."
+    faqs={faqFinancing}
+    outro={{
+      heading: "Still have questions?",
+      body: "Reach out directly and talk to us.",
+      btnHref: "/contact",
+      btnLabel: "Contact",
+    }}
+  />
+</BaseLayout>
