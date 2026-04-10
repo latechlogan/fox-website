@@ -7,6 +7,7 @@ import CTABlock from "../../components/grid-blocks/CTABlock.astro";
 import { FaStarOfLife } from "react-icons/fa";
 import Image from "astro/components/Image.astro";
 import placeholder from "../../assets/placeholder.jpg";
+import CTAPhone from "../../components/cta/CTAPhone.astro";
 ---
 
 <BaseLayout>
@@ -16,7 +17,7 @@ import placeholder from "../../assets/placeholder.jpg";
     body="We've been serving Louisiana families and businesses for years, building relationships one job at a time. From the smallest repair to the biggest project, we treat every customer like a neighbor — because that's exactly what they are."
   >
     <div class="btn-group center" slot="cta">
-      <a href="#" class="btn btn-primary">Book a service call</a>
+      <CTAPhone />
       <a href="#" class="btn btn-secondary">Our story</a>
     </div>
   </PageBanner>
@@ -41,7 +42,7 @@ import placeholder from "../../assets/placeholder.jpg";
       body="Electrical issues don't keep business hours. When something goes wrong at home, we show up, figure it out, and get it fixed right."
     >
       <div slot="cta" class="btn-group">
-        <a href="#" class="btn btn-primary">Book a service call</a>
+        <CTAPhone />
         <a href="/what-we-do/service-calls" class="btn btn-secondary"
           >Learn about service calls</a
         >

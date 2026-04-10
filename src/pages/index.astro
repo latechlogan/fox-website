@@ -12,6 +12,7 @@ import { businessLines } from "../data/iconBlocks";
 import LogoGrid from "../components/LogoGrid.astro";
 
 import placeholder from "../../src/assets/placeholder.jpg";
+import CTAPhone from "../components/cta/CTAPhone.astro";
 ---
 
 <BaseLayout>
@@ -22,7 +23,7 @@ import placeholder from "../../src/assets/placeholder.jpg";
     imageAlt="placholder image"
   >
     <Fragment slot="buttons">
-      <a href="" class="btn">Book a service call</a>
+      <CTAPhone />
       <a href="" class="btn btn-secondary">Contact us</a>
     </Fragment>
   </Hero>

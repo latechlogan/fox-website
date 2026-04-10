@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import SectionIntro from "./SectionIntro.astro";
 import placeholder from "../../src/assets/placeholder.jpg";
+import CTAPhone from "./cta/CTAPhone.astro";
 ---
 
 <section class="fw-container">
@@ -13,8 +14,10 @@ import placeholder from "../../src/assets/placeholder.jpg";
           body="Tell us what you need and we'll take it from there."
         />
         <div class="btn-group">
-          <a href="" class="btn">Book a service call</a>
-          <a href="" class="btn btn-secondary">Email us</a>
+          <CTAPhone />
+          <a href="mailto:foxfamilyelectric@gmail.com" class="btn btn-secondary"
+            >Email us</a
+          >
         </div>
       </div>
       <div class="image-wrapper">

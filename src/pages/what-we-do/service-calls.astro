@@ -5,6 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { serviceCallItems } from "../../data/iconBlocks";
 import { serviceCallSteps } from "../../data/iconBlocks";
 import ReviewCarousel from "../../components/ReviewCarousel.jsx";
+import CTAPhone from "../../components/cta/CTAPhone.astro";
 ---
 
 <BaseLayout>
@@ -45,9 +46,7 @@ import ReviewCarousel from "../../components/ReviewCarousel.jsx";
                 card={true}
               >
                 <div class="btn-group" slot="cta">
-                  <a href="#" class="btn btn-primary">
-                    Book a service call
-                  </a>
+                  <CTAPhone />
                 </div>
               </IconBlock>
             </>
@@ -69,5 +68,3 @@ import ReviewCarousel from "../../components/ReviewCarousel.jsx";
 
   <ReviewCarousel client:visible />
 </BaseLayout>
-
-<style></style>

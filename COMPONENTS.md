@@ -31,7 +31,7 @@ Bordered card block with an icon, heading, body, and a slot for action buttons. 
   body="Electrical issues don't keep business hours."
 >
   <div slot="cta" class="btn-group">
-    <a href="" class="btn">Book a service call</a>
+    <CTAPhone />
     <a href="" class="btn btn-secondary">Learn about service calls</a>
   </div>
 </CTABlock>
@@ -98,7 +98,7 @@ Two-column section with text on one side and an image on the other. Stacks verti
   imageAlt="Electrician at work"
 >
   <Fragment slot="buttons">
-    <a href="" class="btn">Book a service call</a>
+    <CTAPhone />
     <a href="" class="btn btn-secondary">Contact us</a>
   </Fragment>
 </Hero>
@@ -180,7 +180,7 @@ Centered text banner for inner pages — eyebrow, heading, body, and an optional
   body="Everything you need to know before booking."
 >
   <div slot="cta" class="btn-group center">
-    <a href="" class="btn">Book a service call</a>
+    <CTAPhone />
   </div>
 </PageBanner>
 ```
