@@ -22,17 +22,76 @@ import foxLogo from "../../src/assets/redfox_highres.jpg";
 
     <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
       <ul class="nav-group">
-        <li class="nav-element">
-          <a href="/what-we-do/" class="nav-link">What we do</a>
+        <li class="nav-element js-has-submenu" data-expanded="false">
+          <a
+            href="/what-we-do/"
+            class="nav-link"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            What we do
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="submenu" role="list">
+            <li><a href="/what-we-do/index/">Our services</a></li>
+            <li><a href="/what-we-do/service-calls/">Service calls</a></li>
+            <li><a href="/what-we-do/projects/">Projects</a></li>
+            <li><a href="/what-we-do/service-area/">Service area</a></li>
+          </ul>
         </li>
+
         <li class="nav-element">
           <a href="/generators/" class="nav-link">Generators</a>
         </li>
+
         <li class="nav-element">
           <a href="/about-us/" class="nav-link">About us</a>
         </li>
-        <li class="nav-element">
-          <a href="#" class="nav-link">More</a>
+
+        <li class="nav-element js-has-submenu" data-expanded="false">
+          <a
+            href="#"
+            class="nav-link"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            More
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="submenu" role="list">
+            <li><a href="/liveswitch">LiveSwitch</a></li>
+            <li><a href="/pay-invoice">Pay Invoice</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/financing">Financing</a></li>
+            <li><a href="/moxey">Moxey</a></li>
+          </ul>
         </li>
       </ul>
 
@@ -49,14 +108,63 @@ import foxLogo from "../../src/assets/redfox_highres.jpg";
 </header>
 
 <script>
+  // Mobile nav toggle
   const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
   const nav = document.querySelector<HTMLElement>("#primary-nav");
 
   toggle?.addEventListener("click", () => {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
     toggle.setAttribute("aria-expanded", String(!isOpen));
     nav?.setAttribute("data-open", String(!isOpen));
+  });
+
+  // Submenu logic
+  const submenuItems =
+    document.querySelectorAll<HTMLElement>(".js-has-submenu");
+
+  function closeAllSubmenus(except?: HTMLElement) {
+    submenuItems.forEach((item) => {
+      if (item === except) return;
+      item.setAttribute("data-expanded", "false");
+      const link = item.querySelector<HTMLAnchorElement>(".nav-link");
+      if (link) link.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  submenuItems.forEach((item) => {
+    const link = item.querySelector<HTMLAnchorElement>(".nav-link");
+    if (!link) return;
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const isExpanded = item.getAttribute("data-expanded") === "true";
+      closeAllSubmenus(item);
+      item.setAttribute("data-expanded", String(!isExpanded));
+      link.setAttribute("aria-expanded", String(!isExpanded));
+    });
+  });
+
+  // Close when clicking outside the nav
+  document.addEventListener("click", (e) => {
+    const target = e.target as Node;
+    if (!nav?.contains(target)) {
+      closeAllSubmenus();
+    }
+  });
+
+  // Close on Escape, return focus to the trigger link
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    submenuItems.forEach((item) => {
+      if (item.getAttribute("data-expanded") === "true") {
+        item.setAttribute("data-expanded", "false");
+        const link = item.querySelector<HTMLAnchorElement>(".nav-link");
+        if (link) {
+          link.setAttribute("aria-expanded", "false");
+          link.focus();
+        }
+      }
+    });
   });
 </script>
 
@@ -112,6 +220,69 @@ import foxLogo from "../../src/assets/redfox_highres.jpg";
     padding: 0.25rem 0.75rem;
   }
 
+  /* ── Submenu parent item ── */
+  .js-has-submenu {
+    position: relative;
+  }
+
+  /* Make the trigger link inline-flex so the chevron sits beside the text */
+  .js-has-submenu > .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .js-has-submenu > .nav-link svg {
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .js-has-submenu[data-expanded="true"] > .nav-link svg {
+    transform: rotate(180deg);
+  }
+
+  /* ── Submenu panel ── */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0.375rem 0;
+    background: #fff;
+    border: 1px solid hsla(0, 0%, 0%, 10%);
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, 12%);
+    min-width: 180px;
+    z-index: 200;
+  }
+
+  .js-has-submenu[data-expanded="true"] .submenu {
+    display: block;
+  }
+
+  .submenu li {
+    margin: 0;
+  }
+
+  .submenu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: var(--text-base);
+    text-decoration: none;
+    white-space: nowrap;
+    color: inherit;
+  }
+
+  .submenu a:hover,
+  .submenu a:focus {
+    background: hsla(0, 0%, 0%, 5%);
+    outline: none;
+  }
+
+  /* ── Mobile ── */
   @media (max-width: 767px) {
     .header {
       padding: 1rem;
@@ -197,6 +368,29 @@ import foxLogo from "../../src/assets/redfox_highres.jpg";
     .btn {
       font-size: var(--text-lg);
       text-align: center;
+    }
+
+    /* Submenu: expand inline on mobile */
+    .submenu {
+      position: static;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      padding: 0 0 0.5rem 1rem;
+      min-width: 0;
+      width: 100%;
+      background: transparent;
+    }
+
+    .submenu a {
+      font-size: var(--text-lg);
+      padding: 0.4rem 0;
+    }
+
+    .submenu a:hover,
+    .submenu a:focus {
+      background: transparent;
+      text-decoration: underline;
     }
   }
 </style>
