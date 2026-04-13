@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import foxLogo from "../../src/assets/redfox_highres.jpg";
+import { url } from "../utils/url.js";
 
 import { SocialIcon } from "react-social-icons";
 import "react-social-icons/facebook";
@@ -13,7 +14,7 @@ import "react-social-icons/youtube";
 <footer class="fw-container">
   <div class="mw-container footer">
     <div class="footer__intro">
-      <a href="/" class="banner" aria-label="Fox Family Electric — home">
+      <a href={url("/")} class="banner" aria-label="Fox Family Electric — home">
         <Image src={foxLogo} alt="Fox Family Electric Logo" />
       </a>
       <div class="highlight">

@@ -3,13 +3,14 @@ import Header from "../components/Header.astro";
 import GlobalCTA from "../components/GlobalCTA.astro";
 import Footer from "../components/Footer.astro";
 import "../css/global.css";
+import { url } from "../utils/url.js";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={url("/favicon.svg")} />
+    <link rel="icon" href={url("/favicon.ico")} />
     <!-- font link -->
     <link
       href="https://api.fontshare.com/v2/css?f[]=spline-sans@1&display=swap"
