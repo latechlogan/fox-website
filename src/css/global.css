@@ -87,6 +87,9 @@ h6 {
   --text-3xl: clamp(1.8144rem, 1.5579rem + 1.14vw, 2.4414rem);
   --text-4xl: clamp(2.1773rem, 1.8195rem + 1.59vw, 3.0518rem);
   --text-5xl: clamp(2.6127rem, 2.121rem + 2.1854vw, 3.8147rem);
+
+  /* colors */
+  --brand-primary: rgb(228, 26, 35);
 }
 
 body {
@@ -141,8 +144,8 @@ a {
   padding: 0.5rem 1rem;
   color: #fff;
   text-decoration: none;
-  background-color: #222;
-  border: 1px solid #222;
+  background-color: var(--brand-primary);
+  border: 1px solid var(--brand-primary);
   border-radius: 0.25rem;
 }
 
