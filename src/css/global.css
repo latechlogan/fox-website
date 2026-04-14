@@ -89,7 +89,7 @@ h6 {
   --text-5xl: clamp(2.6127rem, 2.121rem + 2.1854vw, 3.8147rem);
 
   /* colors */
-  --brand-primary: rgb(228, 26, 35);
+  --brand-primary: hsl(358, 72%, 48%);
 }
 
 body {
@@ -145,7 +145,7 @@ a {
   color: #fff;
   text-decoration: none;
   background-color: var(--brand-primary);
-  border: 1px solid var(--brand-primary);
+  border: 1px solid hsl(358, 64%, 40%);
   border-radius: 0.25rem;
 }
 

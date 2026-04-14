@@ -21,38 +21,50 @@ import "react-social-icons/youtube";
         <strong>Fox Family Electric. Serving Louisiana with pride.</strong>
         <p>Ready to get started? We'd love to hear from you.</p>
       </div>
+      <p>212 Haynes St, West Monroe, Louisiana 71291</p>
       <div class="cta">
         <strong
           >Book a service call:&ensp;<a href="tel:3183309966">318-330-9966</a
           ></strong
         >
-        <p>Contact us:&ensp;<a href="#">[email address]</a></p>
+        <p>
+          Contact us:&ensp;<a href="mailto:foxfamilyelectric@gmail.com"
+            >foxfamilyelectric@gmail.com</a
+          >
+        </p>
       </div>
       <div class="social">
         <SocialIcon
-          url="www.facebook.com"
+          url="https://www.facebook.com/foxfamilyelectric/"
+          target="blank"
           style={{ width: "2rem", height: "2rem" }}
-          bgColor="#222"
+          bgColor="#d32228"
         />
-        <SocialIcon
+        <!-- <SocialIcon
           url="www.instagram.com"
           style={{ width: "2rem", height: "2rem" }}
-          bgColor="#222"
+          bgColor="#d32228"
         />
         <SocialIcon
           url="www.x.com"
           style={{ width: "2rem", height: "2rem" }}
-          bgColor="#222"
+          bgColor="#d32228"
         />
         <SocialIcon
           url="www.linkedin.com"
           style={{ width: "2rem", height: "2rem" }}
-          bgColor="#222"
+          bgColor="#d32228"
         />
         <SocialIcon
           url="www.youtube.com"
           style={{ width: "2rem", height: "2rem" }}
-          bgColor="#222"
+          bgColor="#d32228"
+        /> -->
+        <SocialIcon
+          url="https://www.google.com/search?kgmid=/g/1th0n87l&hl=en-US&q=Fox+Family+Electric+LLC&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=7a6c6d7c85bc01d6&utm_source=sh/x/loc/osrp/m5/1"
+          target="blank"
+          style={{ width: "2rem", height: "2rem" }}
+          bgColor="#d32228"
         />
       </div>
     </div>
@@ -125,7 +137,7 @@ import "react-social-icons/youtube";
   }
 
   .cta {
-    margin: 0 0 2rem 0;
+    margin: 1rem 0 2rem 0;
   }
 
   .social {
@@ -144,7 +156,8 @@ import "react-social-icons/youtube";
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
+    grid-column-gap: 4rem;
+    grid-row-gap: 0.25rem;
   }
 
   .footer__nav-element {
