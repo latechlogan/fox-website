@@ -3,7 +3,7 @@ const { icon: Icon, heading, body } = Astro.props;
 ---
 
 <div class="cta-block">
-  <Icon size="1.8rem" />
+  {Icon && <Icon size="1.8rem" />}
   <strong class="cta-block__heading">{heading}</strong>
   <p class="cta-block__body">{body}</p>
   <slot name="cta" />
