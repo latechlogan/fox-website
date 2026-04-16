@@ -26,6 +26,7 @@ Requires Node >= 22.12.0.
 src/
 ├── assets/          # Images (imported via astro:assets for optimization)
 ├── components/
+│   ├── cta/         # CTAPhone — reusable CTA button components
 │   ├── grid-blocks/ # IconBlock, CTABlock, ReviewBlock, TextBlock, StaffBlock — used inside SectionGrid
 │   └── *.astro      # Section-level components (Hero, SectionGrid, Header, FAQ, Team, etc.)
 ├── css/
@@ -36,12 +37,20 @@ src/
 └── pages/
     ├── index.astro
     ├── about-us.astro
+    ├── book-online.astro
+    ├── careers.astro
+    ├── contact.astro
     ├── faq.astro
+    ├── financing.astro
     ├── generators.astro
+    ├── liveswitch.astro
+    ├── moxey.astro
+    ├── pay-invoice.astro
     └── what-we-do/
         ├── index.astro
-        ├── service-calls.astro
-        └── projects.astro
+        ├── projects.astro
+        ├── service-area.astro
+        └── service-calls.astro
 ```
 
 ## Key Conventions

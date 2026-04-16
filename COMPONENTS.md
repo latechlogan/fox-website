@@ -12,12 +12,25 @@ Root layout wrapper used by every page. Renders `Header`, `GlobalCTA`, and `Foot
 
 ---
 
-### `CTABlock.astro`
-Bordered card block with an icon, heading, body, and a slot for action buttons. Always renders as a card (unlike `IconBlock` which has an optional `card` prop).
+### `CTAPhone.astro`
+Primary CTA button that links to the business phone number (`tel:3183309966`) with a phone icon. Styled as a `.btn` with flex layout.
 
 | Prop | Type | Required | Notes |
 |------|------|:--------:|-------|
-| `icon` | React icon component | Yes | e.g., `FaBolt` from `react-icons/fa` |
+| `label` | `string` | No | Button text |
+
+```astro
+<CTAPhone label="Call us now" />
+```
+
+---
+
+### `CTABlock.astro`
+Bordered card block with an optional icon, heading, body, and a slot for action buttons. Always renders as a card (unlike `IconBlock` which has an optional `card` prop).
+
+| Prop | Type | Required | Notes |
+|------|------|:--------:|-------|
+| `icon` | React icon component | No | e.g., `FaBolt` from `react-icons/fa`; omit to render without icon |
 | `heading` | `string` | Yes | |
 | `body` | `string` | Yes | |
 
@@ -166,9 +179,10 @@ Centered text banner for inner pages — eyebrow, heading, body, and an optional
 
 | Prop | Type | Required | Default | Notes |
 |------|------|:--------:|---------|-------|
-| `heading` | `string` | Yes | — | |
+| `heading` | `string` | Yes | — | Supports `\n` for line breaks (uses `white-space: pre-wrap`) |
 | `body` | `string` | Yes | — | |
 | `eyebrow` | `string` | No | — | |
+| `align` | `"center" \| "left"` | No | `"center"` | Aligns the banner text |
 
 **Slots:**
 - `cta` — Optional CTA content below the text
@@ -262,7 +276,7 @@ Section with a `SectionIntro` header and a responsive grid of child blocks.
 >
   {businessLines.map((s) => <IconBlock icon={s.icon} heading={s.heading} body={s.body} />)}
   <div slot="cta" class="btn-group center">
-    <a href="#" class="btn btn-secondary">Explore our services</a>
+    <a href="" class="btn btn-secondary">Explore our services</a>
   </div>
 </SectionGrid>
 ```
@@ -338,8 +352,8 @@ Heading + body block without an icon. Supports the same `align` and `card` optio
 
 | File | Exports | Used by |
 |------|---------|---------|
-| `src/data/faq` | `generalFAQ`, `businessLinesFAQ` | `FAQ` (via pages) |
-| `src/data/iconBlocks` | `businessLines`, `serviceCallItems`, `serviceCallSteps`, `projectDisciplines`, `generatorNeeds` | `IconBlock` (via pages) |
+| `src/data/faq` | `generalFAQ`, `businessLinesFAQ`, `faqBookOnline`, `faqPayInvoice`, `faqFinancing`, `faqMoxey` | `FAQ` (via pages) |
+| `src/data/iconBlocks` | `businessLines`, `serviceCallItems`, `serviceCallSteps`, `projectDisciplines`, `generatorNeeds`, `generatorBenefits`, `threeEasySteps`, `careerBenefits` | `IconBlock` (via pages) |
 | `src/data/logos` | `logos` | `LogoGrid` |
 | `src/data/reviews` | `reviews`, `projectReviews` | `ReviewBlock`, `ReviewCarousel`, `ReviewFeatured` |
 | `src/data/team` | `teamMembers` | `Team` → `StaffBlock` |
