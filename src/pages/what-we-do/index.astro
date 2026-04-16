@@ -2,7 +2,6 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SectionGrid from "../../components/SectionGrid.astro";
 import CTABlock from "../../components/grid-blocks/CTABlock.astro";
-import { FaStarOfLife } from "react-icons/fa";
 import Hero from "../../components/Hero.astro";
 import FAQ from "../../components/FAQ.astro";
 import { businessLinesFAQ } from "../../data/faq";
@@ -10,6 +9,7 @@ import { businessLinesFAQ } from "../../data/faq";
 import placeholder from "../../assets/placeholder.jpg";
 import CTAPhone from "../../components/cta/CTAPhone.astro";
 import { url } from "../../utils/url.js";
+import { MdLocalPhone } from "react-icons/md";
 ---
 
 <BaseLayout>
@@ -24,10 +24,10 @@ import { url } from "../../utils/url.js";
       body="Electrical issues don't keep business hours. When something goes wrong at home, we show up, figure it out, and get it fixed right."
     >
       <div slot="cta" class="btn-group">
-        <CTAPhone />
-        <a href={url("/what-we-do/service-calls")} class="btn btn-secondary"
-          >Learn about service calls</a
-        >
+        <CTAPhone label="Book a service call" />
+        <a href={url("/what-we-do/service-calls")} class="btn btn-secondary">
+          Learn about service calls
+        </a>
       </div>
     </CTABlock>
     <CTABlock
@@ -35,10 +35,10 @@ import { url } from "../../utils/url.js";
       body="From new construction to full rewires and generator installations, we handle electrical work of any scale across Louisiana."
     >
       <div slot="cta" class="btn-group">
-        <a href="#" class="btn btn-primary">Start a project conversation</a>
-        <a href={url("/what-we-do/projects")} class="btn btn-secondary"
-          >Learn about projects</a
-        >
+        <CTAPhone label="Start a project" />
+        <a href={url("/what-we-do/projects")} class="btn btn-secondary">
+          Learn about projects
+        </a>
       </div>
     </CTABlock>
   </SectionGrid>
@@ -56,8 +56,8 @@ import { url } from "../../utils/url.js";
       <li>Built on trust across Louisiana</li>
     </ul>
     <div slot="buttons" class="btn-group">
-      <CTAPhone />
-      <a href="" class="btn btn-secondary">Our story</a>
+      <CTAPhone label="Book a service call" />
+      <a href={url("/about-us")} class="btn btn-secondary">Our story</a>
     </div>
   </Hero>
 
@@ -67,8 +67,20 @@ import { url } from "../../utils/url.js";
     outro={{
       heading: "Still have questions?",
       body: "We're happy to help. Reach out and we'll get you sorted.",
-      btnHref: "#",
+      btnHref: "/contact",
       btnLabel: "Contact us",
     }}
   />
 </BaseLayout>
+
+<style>
+  .btn-with-icon {
+    padding-left: 0.8rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

@@ -27,7 +27,9 @@ import { threeEasySteps } from "../data/iconBlocks";
     />
     <Fragment slot="buttons">
       <a href="#" class="btn">Schedule a call</a>
-      <a href="#" class="btn btn-secondary">Learn how it works</a>
+      <a href="#liveswitch-steps" class="btn btn-secondary"
+        >Learn how it works</a
+      >
     </Fragment>
   </Hero>
 
@@ -61,39 +63,41 @@ import { threeEasySteps } from "../data/iconBlocks";
     </div>
   </div>
 
-  <SectionGrid
-    eyebrow="Simple"
-    heading="Three easy steps"
-    body="From booking to estimate in minutes"
-  >
-    {
-      threeEasySteps.map((step, index) => {
-        return index === 0 ? (
-          <IconBlock
-            icon={step.icon}
-            heading={step.heading}
-            body={step.body}
-            align="left"
-            card={true}
-          >
-            <div class="btn-group" slot="cta">
-              <a href="#" class="btn btn-primary">
-                Book online
-              </a>
-            </div>
-          </IconBlock>
-        ) : (
-          <IconBlock
-            icon={step.icon}
-            heading={step.heading}
-            body={step.body}
-            align="left"
-            card={true}
-          />
-        );
-      })
-    }
-  </SectionGrid>
+  <div id="liveswitch-steps">
+    <SectionGrid
+      eyebrow="Simple"
+      heading="Three easy steps"
+      body="From booking to estimate in minutes"
+    >
+      {
+        threeEasySteps.map((step, index) => {
+          return index === 0 ? (
+            <IconBlock
+              icon={step.icon}
+              heading={step.heading}
+              body={step.body}
+              align="left"
+              card={true}
+            >
+              <div class="btn-group" slot="cta">
+                <a href="#" class="btn btn-primary">
+                  Book online
+                </a>
+              </div>
+            </IconBlock>
+          ) : (
+            <IconBlock
+              icon={step.icon}
+              heading={step.heading}
+              body={step.body}
+              align="left"
+              card={true}
+            />
+          );
+        })
+      }
+    </SectionGrid>
+  </div>
 
   <ReviewCarousel client:visible />
 </BaseLayout>

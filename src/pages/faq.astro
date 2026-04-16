@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageBanner from "../components/PageBanner.astro";
 import FAQ from "../components/FAQ.astro";
 import { generalFAQ } from "../data/faq";
+import { url } from "../utils/url";
 ---
 
 <BaseLayout>
@@ -11,9 +12,11 @@ import { generalFAQ } from "../data/faq";
     heading="We've got answers"
     body="Find what you need to know about our services, pricing, and how we work with families like yours."
   >
-    <div class="btn-group">
-      <a href="#" class="btn btn-primary">Explore our services</a>
-      <a href="#" class="btn btn-secondary">Contact us</a>
+    <div class="btn-group" slot="cta">
+      <a href={url("/what-we-do")} class="btn btn-primary"
+        >Explore our services</a
+      >
+      <a href={url("/contact")} class="btn btn-secondary">Contact us</a>
     </div>
   </PageBanner>
 
@@ -23,8 +26,18 @@ import { generalFAQ } from "../data/faq";
     outro={{
       heading: "Still have questions?",
       body: "Reach out and we'll get back to you.",
-      btnHref: "#",
+      btnHref: "/contact",
       btnLabel: "Contact us",
     }}
   />
 </BaseLayout>
+
+<style>
+  .btn-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

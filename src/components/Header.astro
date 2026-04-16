@@ -24,8 +24,7 @@ import { url } from "../utils/url.js";
     <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
       <ul class="nav-group">
         <li class="nav-element js-has-submenu" data-expanded="false">
-          <a
-            href={url("/what-we-do/")}
+          <button
             class="nav-link"
             aria-expanded="false"
             aria-haspopup="true"
@@ -45,7 +44,7 @@ import { url } from "../utils/url.js";
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </a>
+          </button>
           <ul class="submenu" role="list">
             <li><a href={url("/what-we-do/")}>Our services</a></li>
             <li>
@@ -65,8 +64,7 @@ import { url } from "../utils/url.js";
         </li>
 
         <li class="nav-element js-has-submenu" data-expanded="false">
-          <a
-            href="#"
+          <button
             class="nav-link"
             aria-expanded="false"
             aria-haspopup="true"
@@ -86,7 +84,7 @@ import { url } from "../utils/url.js";
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </a>
+          </button>
           <ul class="submenu" role="list">
             <li><a href={url("/liveswitch")}>LiveSwitch</a></li>
             <li><a href={url("/pay-invoice")}>Pay Invoice</a></li>
@@ -100,10 +98,10 @@ import { url } from "../utils/url.js";
 
       <ul class="nav-group">
         <li class="nav-element">
-          <a href="#" class="nav-link btn">Contact</a>
+          <a href={url("/contact")} class="nav-link btn">Contact</a>
         </li>
         <li class="nav-element">
-          <a href="#" class="nav-link btn btn-secondary">Book</a>
+          <a href={url("/book-online")} class="nav-link btn btn-secondary">Book</a>
         </li>
       </ul>
     </nav>
@@ -216,6 +214,11 @@ import { url } from "../utils/url.js";
     gap: 0.5rem;
   }
 
+  button.nav-link {
+    background-color: inherit;
+    border: none;
+  }
+
   .nav-link {
     display: inline-block;
     font-size: var(--text-base);
@@ -233,6 +236,7 @@ import { url } from "../utils/url.js";
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+    padding-right: 0.5rem;
   }
 
   .js-has-submenu > .nav-link svg {

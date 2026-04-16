@@ -18,8 +18,8 @@ import { url } from "../../utils/url.js";
     body="We've been serving Louisiana families and businesses for years, building relationships one job at a time. From the smallest repair to the biggest project, we treat every customer like a neighbor — because that's exactly what they are."
   >
     <div class="btn-group center" slot="cta">
-      <CTAPhone />
-      <a href="#" class="btn btn-secondary">Our story</a>
+      <CTAPhone label="Book a service call" />
+      <a href={url("/about")} class="btn btn-secondary">Our story</a>
     </div>
   </PageBanner>
 
@@ -43,7 +43,7 @@ import { url } from "../../utils/url.js";
       body="Electrical issues don't keep business hours. When something goes wrong at home, we show up, figure it out, and get it fixed right."
     >
       <div slot="cta" class="btn-group">
-        <CTAPhone />
+        <CTAPhone label="Book a service call" />
         <a href={url("/what-we-do/service-calls")} class="btn btn-secondary"
           >Learn about service calls</a
         >
@@ -55,7 +55,7 @@ import { url } from "../../utils/url.js";
       body="From new construction to full rewires and generator installations, we handle electrical work of any scale across Louisiana."
     >
       <div slot="cta" class="btn-group">
-        <a href="#" class="btn btn-primary">Start a project conversation</a>
+        <CTAPhone label="Start a project" />
         <a href={url("/what-we-do/projects")} class="btn btn-secondary"
           >Learn about projects</a
         >

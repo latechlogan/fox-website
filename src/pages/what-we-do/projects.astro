@@ -9,6 +9,7 @@ import { projectDisciplines } from "../../data/iconBlocks";
 import IconBlock from "../../components/grid-blocks/IconBlock.astro";
 import ReviewFeatured from "../../components/ReviewFeatured.astro";
 import { projectReviews } from "../../data/reviews";
+import CTAPhone from "../../components/cta/CTAPhone.astro";
 const featuredReview = projectReviews[0];
 ---
 
@@ -19,7 +20,7 @@ const featuredReview = projectReviews[0];
     body="From new construction to full commercial builds, we handle every phase of the job — temporary power, rough-in, trim out, final inspection, and commissioning. Big projects done right, by a family that takes pride in the work."
   >
     <div class="btn-group center" slot="cta">
-      <a href="#" class="btn btn-primary">Start a project conversation</a>
+      <CTAPhone label="Start a project" />
     </div>
   </PageBanner>
 
@@ -93,7 +94,7 @@ const featuredReview = projectReviews[0];
           body="These aren't just statistics. They're homes that work, businesses that run, and families that trust us to get it right."
         />
         <div class="btn-group">
-          <a href="#" class="btn btn-secondary">Start a project conversation</a>
+          <CTAPhone label="Start a project" />
         </div>
       </div>
       <div class="number-story__numbers">
@@ -134,7 +135,7 @@ const featuredReview = projectReviews[0];
       })
     }
     <div class="btn-group center" slot="cta">
-      <a href="#" class="btn btn-secondary">Start a project conversation</a>
+      <CTAPhone label="Start a project" />
     </div>
   </SectionGrid>
 

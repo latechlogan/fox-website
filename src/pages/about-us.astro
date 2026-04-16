@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import placeholder from "../../src/assets/placeholder.jpg";
 import Team from "../components/Team.astro";
 import LogoGrid from "../components/LogoGrid.astro";
+import { url } from "../utils/url";
 ---
 
 <BaseLayout>
@@ -19,10 +20,10 @@ import LogoGrid from "../components/LogoGrid.astro";
       <li>We fix it right the first time</li>
       <li>We treat your home like ours</li>
     </ul>
-    <a href="#" slot="buttons" class="btn btn-secondary">Meet the team</a>
+    <a href={url("/about-us/#team-grid")} slot="buttons" class="btn btn-secondary">Meet the team</a>
   </Hero>
 
-  <div class="fw-container">
+  <div class="fw-container" id="mission">
     <div class="mw-container mission">
       <h2 class="mission__heading">Mission</h2>
       <strong class="mission__body"
@@ -41,11 +42,13 @@ import LogoGrid from "../components/LogoGrid.astro";
     imageAlt=""
     reverse={true}
   >
-    <a href="#" slot="buttons" class="btn btn-secondary">See our careers page</a
+    <a href={url("/careers")} slot="buttons" class="btn btn-secondary">See our careers page</a
     >
   </Hero>
 
-  <Team />
+  <div id="team-grid">
+    <Team />
+  </div>
 
   <LogoGrid heading="Recognized for doing things right" />
 

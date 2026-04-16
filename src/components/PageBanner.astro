@@ -7,7 +7,7 @@ const { eyebrow, heading, body, align = "center" } = Astro.props;
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}
     <h2 class="text-4xl text-heading">{heading}</h2>
     <p class="text-base">{body}</p>
-    <slot name="cta" />
+    <slot name="cta" class="cta-slot"/>
   </div>
 </div>
 
