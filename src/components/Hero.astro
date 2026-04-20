@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import SectionIntro from "./SectionIntro.astro";
 
-const { eyebrow, heading, body, image, imageAlt, reverse } = Astro.props;
+const { eyebrow, heading, body, reverse } = Astro.props;
 ---
 
 <div class="fw-container">
@@ -21,7 +20,7 @@ const { eyebrow, heading, body, image, imageAlt, reverse } = Astro.props;
     </div>
 
     <div class="image-wrapper">
-      <Image src={image} alt={imageAlt} />
+      <slot name="image" />
     </div>
   </div>
 </div>

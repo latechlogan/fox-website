@@ -6,6 +6,7 @@ import Hero from "../../components/Hero.astro";
 import FAQ from "../../components/FAQ.astro";
 import { businessLinesFAQ } from "../../data/faq";
 
+import { Image } from "astro:assets";
 import placeholder from "../../assets/placeholder.jpg";
 import CTAPhone from "../../components/cta/CTAPhone.astro";
 import { url } from "../../utils/url.js";
@@ -47,9 +48,8 @@ import { MdLocalPhone } from "react-icons/md";
     eyebrow="Reliable"
     heading="Family-owned means we do it right"
     body="We treat every job like it's our own home. That's the difference between a contractor and a neighbor you can trust."
-    image={placeholder}
-    imageAlt=""
   >
+    <Image slot="image" src={placeholder} alt="" />
     <ul slot="bullets">
       <li>Licensed and insured for your protection</li>
       <li>Safety and quality on every job</li>

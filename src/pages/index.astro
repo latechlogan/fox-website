@@ -10,7 +10,7 @@ import { reviews } from "../data/reviews";
 import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { businessLines } from "../data/iconBlocks";
 import LogoGrid from "../components/LogoGrid.astro";
-
+import heroHouses from "../assets/hero-houses-photo.jpg";
 import placeholder from "../../src/assets/placeholder.jpg";
 import CTAPhone from "../components/cta/CTAPhone.astro";
 import { url } from "../utils/url";
@@ -20,9 +20,8 @@ import { url } from "../utils/url";
   <Hero
     heading="We're the electrical contractors trusted by your neighbors."
     body="Fox Family Electric has been reliably serving this community for generations. We show up on time, do the job right, and treat your home like it's our own."
-    image={placeholder}
-    imageAlt="placholder image"
   >
+    <Image slot="image" src={heroHouses} alt="Fox Family Electric service area houses" />
     <Fragment slot="buttons">
       <CTAPhone label="Book a service call" />
       <a href={url("/contact")} class="btn btn-secondary">Contact us</a>
@@ -47,10 +46,9 @@ import { url } from "../utils/url";
     eyebrow="Family"
     heading="Built on trust. Rooted in Louisiana."
     body="Our family has been doing this work for three generations and we take pride in doing it right. We're not a big corporation. We're your neighbors, and every job we take on gets the same care we'd give our own home."
-    image={placeholder}
-    imageAlt=""
     reverse={true}
   >
+    <Image slot="image" src={placeholder} alt="" />
     <Fragment slot="buttons">
       <a href={url("/about-us")} class="btn btn-secondary">Meet the family</a>
     </Fragment>
@@ -85,9 +83,8 @@ import { url } from "../utils/url";
     eyebrow="Innovation"
     heading={"Get estimates faster.\nNo visit required."}
     body="With LiveSwitch, we assess your job through a live video call so you can get a quote faster and skip the dispatch fee. Just show us what you're working with and we'll take it from there."
-    image={liveSwitchPhoto}
-    imageAlt=""
   >
+    <Image slot="image" src={liveSwitchPhoto} alt="" />
     <Image
       slot="logo"
       src={liveSwitch}
@@ -105,10 +102,9 @@ import { url } from "../utils/url";
     eyebrow="Power"
     heading="Generators that keep Louisiana running."
     body="In Louisiana, storms come without warning. A generator isn't a luxury, it's peace of mind. We sell, install, and maintain them so you're never left in the dark."
-    image={placeholder}
-    imageAlt=""
     reverse={true}
   >
+    <Image slot="image" src={placeholder} alt="" />
     <Fragment slot="buttons">
       <a href={url("/generators")} class="btn btn-secondary"
         >Call about generators</a

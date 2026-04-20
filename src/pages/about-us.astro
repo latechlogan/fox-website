@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import { Image } from "astro:assets";
 import placeholder from "../../src/assets/placeholder.jpg";
 import Team from "../components/Team.astro";
 import LogoGrid from "../components/LogoGrid.astro";
@@ -12,9 +13,8 @@ import { url } from "../utils/url";
     eyebrow="Foundation"
     heading="Three generations built this on trust"
     body="Our story started simple. A man who knew electrical work, who did it right, and who treated every job like it mattered. His son learned the trade the same way — watching, doing, and understanding that a family's safety depends on honest work. Now his children carry that forward, and every electrician we hire learns the same thing on day one."
-    image={placeholder}
-    imageAlt=""
   >
+    <Image slot="image" src={placeholder} alt="" />
     <ul slot="bullets" class="hero-bullets">
       <li>We show up when promised</li>
       <li>We fix it right the first time</li>
@@ -38,10 +38,9 @@ import { url } from "../utils/url";
     eyebrow="Tomorrow"
     heading="Building lasting relationships across Louisiana"
     body="We're committed to training the next generation of electricians who understand that this work is about more than wiring and panels. It's about being someone people can count on. It's about community. It's about doing things the right way, even when no one's watching."
-    image={placeholder}
-    imageAlt=""
     reverse={true}
   >
+    <Image slot="image" src={placeholder} alt="" />
     <a href={url("/careers")} slot="buttons" class="btn btn-secondary">See our careers page</a
     >
   </Hero>
