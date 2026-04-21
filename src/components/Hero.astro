@@ -19,9 +19,7 @@ const { eyebrow, heading, body, reverse } = Astro.props;
       </div>
     </div>
 
-    <div class="image-wrapper">
-      <slot name="image" />
-    </div>
+    <slot name="image" />
   </div>
 </div>
 
@@ -40,10 +38,6 @@ const { eyebrow, heading, body, reverse } = Astro.props;
   }
 
   .content-wrapper {
-    width: 100%;
-  }
-
-  .image-wrapper {
     width: 100%;
   }
 

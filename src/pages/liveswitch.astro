@@ -17,7 +17,9 @@ import { threeEasySteps } from "../data/iconBlocks";
     heading="Get your estimate faster. No visit required."
     body="With LiveSwitch, we assess your job through a live video call so you can get a quote faster and skip the dispatch fee. Just show us what you're working with and we'll take it from there."
   >
-    <Image slot="image" src={placeholder} alt="LiveSwitch video call assessment" />
+    <div class="image-wrapper" slot="image">
+      <Image src={placeholder} alt="LiveSwitch video call assessment" />
+    </div>
     <Image
       slot="logo"
       src={liveswitchLogo}

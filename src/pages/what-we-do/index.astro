@@ -10,7 +10,6 @@ import { Image } from "astro:assets";
 import placeholder from "../../assets/placeholder.jpg";
 import CTAPhone from "../../components/cta/CTAPhone.astro";
 import { url } from "../../utils/url.js";
-import { MdLocalPhone } from "react-icons/md";
 ---
 
 <BaseLayout>
@@ -49,7 +48,9 @@ import { MdLocalPhone } from "react-icons/md";
     heading="Family-owned means we do it right"
     body="We treat every job like it's our own home. That's the difference between a contractor and a neighbor you can trust."
   >
-    <Image slot="image" src={placeholder} alt="" />
+    <div class="image-wrapper" slot="image">
+      <Image src={placeholder} alt="" />
+    </div>
     <ul slot="bullets">
       <li>Licensed and insured for your protection</li>
       <li>Safety and quality on every job</li>
