@@ -1,0 +1,43 @@
+.heroRotator {
+  padding: 1rem;
+}
+
+.heroRotatorStars {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.125rem;
+}
+
+.heroRotatorStars > * {
+  color: var(--gold-star);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.heroRotatorBody {
+  font-size: var(--text-sm);
+  margin-bottom: 0.5rem;
+}
+
+.heroRotatorName {
+  /* font-weight: 500; */
+  font-size: var(--text-sm);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heroRotatorVerification {
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+}
