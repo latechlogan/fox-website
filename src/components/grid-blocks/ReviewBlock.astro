@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { FaStar } from "react-icons/fa";
+import { MdVerified } from "react-icons/md";
 const { review } = Astro.props;
 ---
 
@@ -19,7 +20,9 @@ const { review } = Astro.props;
     }
     <div class="reviewer__info-wrapper">
       <strong class="reviewer__name text-base">{review.name}</strong>
-      <p class="reviewer__desc text-base">{review.description}</p>
+      <a href="" target="_blank" class="reviewer__desc text-sm"
+        >Google Review<MdVerified fill="rgb(25, 123, 255)" /></a
+      >
     </div>
   </div>
 </div>
@@ -70,5 +73,20 @@ const { review } = Astro.props;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  .reviewer__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .reviewer__desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem;
   }
 </style>
