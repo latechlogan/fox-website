@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SectionIntro from "./SectionIntro.astro";
-import placeholder from "../../src/assets/placeholder.jpg";
+import getStarted from "../assets/get-started.png";
 import CTAPhone from "./cta/CTAPhone.astro";
 ---
 
@@ -21,7 +21,7 @@ import CTAPhone from "./cta/CTAPhone.astro";
         </div>
       </div>
       <div class="image-wrapper">
-        <Image src={placeholder} alt="" />
+        <Image src={getStarted} alt="" />
       </div>
     </div>
   </div>
@@ -61,6 +61,7 @@ import CTAPhone from "./cta/CTAPhone.astro";
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0;
   }
 
   @media screen and (min-width: 700px) {

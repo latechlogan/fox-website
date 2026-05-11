@@ -11,11 +11,12 @@ import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { businessLines } from "../data/iconBlocks";
 import LogoGrid from "../components/LogoGrid.astro";
 import heroHouses from "../assets/hero-houses-photo.jpg";
-import placeholder from "../../src/assets/placeholder.jpg";
 import CTAPhone from "../components/cta/CTAPhone.astro";
 import { url } from "../utils/url";
 import { FaStar } from "react-icons/fa";
 import HeroReviewRotator from "../components/HeroReviewRotator.jsx";
+import generatorImage from "../assets/generator-homepage.png";
+import foxCrew from "../assets/fox-fullcrew-old.webp";
 ---
 
 <BaseLayout>
@@ -75,7 +76,7 @@ import HeroReviewRotator from "../components/HeroReviewRotator.jsx";
     reverse={true}
   >
     <div class="image-wrapper" slot="image">
-      <Image src={placeholder} alt="" />
+      <Image src={foxCrew} alt="" />
     </div>
     <Fragment slot="buttons">
       <a href={url("/about-us")} class="btn btn-secondary">Meet the family</a>
@@ -135,7 +136,7 @@ import HeroReviewRotator from "../components/HeroReviewRotator.jsx";
     reverse={true}
   >
     <div class="image-wrapper" slot="image">
-      <Image src={placeholder} alt="" />
+      <Image src={generatorImage} alt="" />
     </div>
     <Fragment slot="buttons">
       <a href={url("/generators")} class="btn btn-secondary"
@@ -144,7 +145,7 @@ import HeroReviewRotator from "../components/HeroReviewRotator.jsx";
     </Fragment>
   </Hero>
 
-  <LogoGrid heading="Trusted by Louisiana families and businesses" />
+  <!-- <LogoGrid heading="Trusted by Louisiana families and businesses" /> -->
 </BaseLayout>
 
 <style>
