@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SectionIntro from "./SectionIntro.astro";
-import getStarted from "../assets/get-started.png";
+import getStartedImage from "../assets/get-started.png";
 import CTAPhone from "./cta/CTAPhone.astro";
 ---
 
@@ -21,7 +21,7 @@ import CTAPhone from "./cta/CTAPhone.astro";
         </div>
       </div>
       <div class="image-wrapper">
-        <Image src={getStarted} alt="" />
+        <Image class="get-started__img" src={getStartedImage} alt="" />
       </div>
     </div>
   </div>
@@ -35,8 +35,9 @@ import CTAPhone from "./cta/CTAPhone.astro";
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 0.375rem;
+    /* border: 1px solid #ccc; */
+    border-radius: 1rem;
+    background-color: #f6f6f6;
     overflow: hidden;
   }
 
@@ -59,7 +60,7 @@ import CTAPhone from "./cta/CTAPhone.astro";
     object-fit: cover;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 0;
   }
@@ -75,7 +76,7 @@ import CTAPhone from "./cta/CTAPhone.astro";
 
     .image-wrapper {
       width: 50%;
-      max-height: 300px;
+      max-height: 320px;
     }
   }
 </style>

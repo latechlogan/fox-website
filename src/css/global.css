@@ -204,6 +204,6 @@ img {
 @media screen and (min-width: 768px) {
   :root {
     --container-padding-x: 2rem;
-    --container-padding-y: 4rem;
+    --container-padding-y: 6rem;
   }
 }

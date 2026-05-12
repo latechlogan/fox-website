@@ -22,7 +22,11 @@ import { url } from "../utils/url";
       <li>We fix it right the first time</li>
       <li>We treat your home like ours</li>
     </ul>
-    <a href={url("/about-us/#team-grid")} slot="buttons" class="btn btn-secondary">Meet the team</a>
+    <a
+      href={url("/about-us/#team-grid")}
+      slot="buttons"
+      class="btn btn-secondary">Meet the team</a
+    >
   </Hero>
 
   <div class="fw-container" id="mission">
@@ -45,13 +49,14 @@ import { url } from "../utils/url";
     <div class="image-wrapper" slot="image">
       <Image src={placeholder} alt="" />
     </div>
-    <a href={url("/careers")} slot="buttons" class="btn btn-secondary">See our careers page</a
+    <a href={url("/careers")} slot="buttons" class="btn btn-secondary"
+      >See our careers page</a
     >
   </Hero>
 
-  <div id="team-grid">
+  <!-- <div id="team-grid">
     <Team />
-  </div>
+  </div> -->
 
   <LogoGrid heading="Recognized for doing things right" />
 

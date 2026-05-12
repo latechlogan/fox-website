@@ -11,6 +11,10 @@
   gap: 1rem;
 }
 
+.starWrapper > * {
+  color: var(--gold-star);
+}
+
 @media screen and (min-width: 600px) {
   .carouselContent {
     grid-template-rows: 0.5fr 1fr 1fr;
@@ -64,7 +68,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: var(--container-padding);
+  padding: var(--container-padding-x);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

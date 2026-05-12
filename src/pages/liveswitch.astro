@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
 import liveswitchLogo from "../assets/liveswitch-logo.png";
 import placeholder from "../assets/placeholder.jpg";
+import liveswitchHero from "../assets/liveswitch-photo.png";
 import ReviewCarousel from "../components/ReviewCarousel";
 import TextBlock from "../components/grid-blocks/TextBlock.astro";
 import SectionGrid from "../components/SectionGrid.astro";
@@ -18,7 +19,7 @@ import { threeEasySteps } from "../data/iconBlocks";
     body="With LiveSwitch, we assess your job through a live video call so you can get a quote faster and skip the dispatch fee. Just show us what you're working with and we'll take it from there."
   >
     <div class="image-wrapper" slot="image">
-      <Image src={placeholder} alt="LiveSwitch video call assessment" />
+      <Image src={liveswitchHero} alt="LiveSwitch video call assessment" />
     </div>
     <Image
       slot="logo"
