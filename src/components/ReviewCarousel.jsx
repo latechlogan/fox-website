@@ -26,34 +26,34 @@ export default function ReviewCarousel() {
   };
 
   return (
-    <div class="fw-container">
-      <div class={`${styles.reviewCarousel} mw-container`}>
-        <div class={styles.carouselContent}>
-          <div class={styles.starWrapper}>
+    <div className="fw-container">
+      <div className={`${styles.reviewCarousel} mw-container`}>
+        <div className={styles.carouselContent}>
+          <div className={styles.starWrapper}>
             {Array.from({ length: review.stars }, (_, i) => (
               <FaStar />
             ))}
           </div>
 
-          <p class={styles.reviewBody}>"{review.body}"</p>
+          <p className={styles.reviewBody}>"{review.body}"</p>
 
-          <div class={styles.reviewer}>
+          <div className={styles.reviewer}>
             {review.photo && (
-              <div class="reviewer__photo-wrapper">
+              <div className="reviewer__photo-wrapper">
                 <img
                   src={review.photo.src}
                   alt=""
-                  class={styles.reviewerPhoto}
+                  className={styles.reviewerPhoto}
                 />
               </div>
             )}
-            <div class={styles.reviewerInfoWrapper}>
-              <strong class="reviewer__name text-base">{review.name}</strong>
-              <p class="reviewer__desc text-base">{review.description}</p>
+            <div className={styles.reviewerInfoWrapper}>
+              <strong className="reviewer__name text-base">{review.name}</strong>
+              <p className="reviewer__desc text-base">{review.description}</p>
             </div>
           </div>
         </div>
-        <div class={styles.carouselControls}>
+        <div className={styles.carouselControls}>
           <button onClick={handlePrev}>
             <BsArrowLeftCircle />
           </button>

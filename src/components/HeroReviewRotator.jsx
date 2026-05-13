@@ -28,21 +28,21 @@ export default function HeroReviewRotator({ reviews }) {
 
   return (
     <div
-      class={styles.heroRotator}
+      className={styles.heroRotator}
       style={{ opacity: visible ? 1 : 0, transition: "opacity 0.3s ease" }}
     >
-      <div class={styles.heroRotatorStars}>
+      <div className={styles.heroRotatorStars}>
         {Array.from({ length: review.stars }, (_, i) => (
           <FaStar key={i} />
         ))}
       </div>
-      <p class={styles.heroRotatorBody}>{review.body}</p>
-      <p class={styles.heroRotatorName}>
+      <p className={styles.heroRotatorBody}>{review.body}</p>
+      <p className={styles.heroRotatorName}>
         {review.name}&ensp;|&ensp;
         <a
           href="https://www.google.com/search?sca_esv=58faf45c7c4dd337&sxsrf=ANbL-n6jMPcBhiT6GLNuBkfZ8tH9yEbzPQ:1776964538997&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x_q0qmDEzOVtVhGc3IxULo2rJWXPSc7GIbXOlMr5zQ43g1mZ1qMAmKw6sn9_xrJEWDOycgCFxICj3imT2d4hH-5XTqxrVtjT_C5PUY1pPSDnDJ1XqQ%3D%3D&q=Fox+Family+Electric+LLC+Reviews&sa=X&ved=2ahUKEwigkIDhvISUAxVvnGoFHRylKsEQ0bkNegQIRRAH&biw=1712&bih=891&dpr=2"
           target="_blank"
-          class={styles.heroRotatorVerification}
+          className={styles.heroRotatorVerification}
         >
           Google Review
           <MdVerified fill="rgb(25, 123, 255)" />
