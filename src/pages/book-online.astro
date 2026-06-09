@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageBanner from "../components/PageBanner.astro";
 import FAQ from "../components/FAQ.astro";
 import { faqBookOnline } from "../data/faq";
+import { url } from "../utils/url";
 ---
 
 <BaseLayout>
@@ -10,7 +11,15 @@ import { faqBookOnline } from "../data/faq";
     eyebrow="Simple"
     heading="Schedule your service"
     body="Pick a time that works for you and we'll take it from there."
-  />
+  >
+    <div class="btn-group" slot="cta">
+      <a
+        href="https://book.housecallpro.com/book/Fox-Family-Electric-LLC/78deb12faeff4e9cbf90f944d6d3c8f8"
+        target="_blank"
+        class="btn btn-primary">Book Now</a
+      >
+    </div>
+  </PageBanner>
 
   <FAQ
     heading="Questions"
@@ -24,3 +33,13 @@ import { faqBookOnline } from "../data/faq";
     }}
   />
 </BaseLayout>
+
+<style>
+  .btn-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

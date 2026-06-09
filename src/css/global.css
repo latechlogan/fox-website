@@ -186,6 +186,7 @@ img {
 .image-wrapper {
   width: 100%;
   border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 .fw-container {

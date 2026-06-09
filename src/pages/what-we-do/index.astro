@@ -5,7 +5,7 @@ import CTABlock from "../../components/grid-blocks/CTABlock.astro";
 import Hero from "../../components/Hero.astro";
 import FAQ from "../../components/FAQ.astro";
 import { businessLinesFAQ } from "../../data/faq";
-
+import careersHero from "../../assets/careers-hero.jpg";
 import { Image } from "astro:assets";
 import placeholder from "../../assets/placeholder.jpg";
 import CTAPhone from "../../components/cta/CTAPhone.astro";
@@ -44,12 +44,11 @@ import { url } from "../../utils/url.js";
   </SectionGrid>
 
   <Hero
-    eyebrow="Reliable"
     heading="Family-owned means we do it right"
     body="We treat every job like it's our own home. That's the difference between a contractor and a neighbor you can trust."
   >
     <div class="image-wrapper" slot="image">
-      <Image src={placeholder} alt="" />
+      <Image src={careersHero} alt="" />
     </div>
     <ul slot="bullets">
       <li>Licensed and insured for your protection</li>
