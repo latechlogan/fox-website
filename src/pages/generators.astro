@@ -6,7 +6,6 @@ import { generatorNeeds } from "../data/iconBlocks";
 import TextBlock from "../components/grid-blocks/TextBlock.astro";
 import { generatorBenefits } from "../data/textBlocks";
 import CTABlock from "../components/grid-blocks/CTABlock.astro";
-import { FaStarOfLife } from "react-icons/fa";
 import ReviewCarousel from "../components/ReviewCarousel";
 ---
 
@@ -20,7 +19,10 @@ import ReviewCarousel from "../components/ReviewCarousel";
     {
       generatorNeeds.map((need) => {
         return (
-          <IconBlock icon={need.icon} heading={need.heading} body={need.body} />
+          <div class="card-with-background">
+            <h2 class="title">{need.heading}</h2>
+            <p>{need.body}</p>
+          </div>
         );
       })
     }
@@ -75,3 +77,40 @@ import ReviewCarousel from "../components/ReviewCarousel";
 
   <ReviewCarousel client:visible />
 </BaseLayout>
+
+<style>
+  .card-with-background {
+    max-width: 400px;
+    margin: auto;
+    aspect-ratio: 800 / 1000;
+    color: #fff;
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .card-with-background:nth-child(1) {
+    background: url(../assets/card-backgrounds/LightningCard.jpg);
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  .card-with-background:nth-child(2) {
+    background: url(../assets/card-backgrounds/DarkCard.jpg);
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  .card-with-background:nth-child(3) {
+    background: url(../assets/card-backgrounds/PeaceCard.jpg);
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  .card-with-background .title {
+    font-size: var(--text-2xl);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+</style>

@@ -113,17 +113,17 @@ export const generatorNeeds: IconBlock[] = [
   {
     icon: BsPlug,
     heading: "Outages happen more than you think",
-    body: "Louisiana ranks among the top states for outages per customer and leads the country in how long those outages last. It's not a matter of if, it's when.",
+    body: "Louisiana leads the nation in outage frequency and duration. It's not a matter of if, it's when.",
   },
   {
     icon: BsLightbulbOff,
     heading: "Don't Leave Your Family in the Dark",
-    body: "Food spoils. Extreme heat or cold becomes dangerous. Kids get scared. A generator changes everything when the lights go out.",
+    body: "Food spoils. Heat turns dangerous. Kids get scared. A generator changes everything.",
   },
   {
     icon: BsTropicalStorm,
     heading: "Peace of mind has a price worth paying",
-    body: "Knowing you're prepared lets you sleep through the storm instead of lying awake wondering what comes next.",
+    body: "Sleep through the storm instead of lying awake wondering what comes next.",
   },
 ];
 
