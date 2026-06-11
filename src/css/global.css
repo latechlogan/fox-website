@@ -100,6 +100,11 @@ body {
   line-height: var(--line-height-base);
 }
 
+body[data-open="true"] {
+  /* position: fixed; */
+  overflow: hidden;
+}
+
 /* Utility Classes */
 .text-xs {
   font-size: var(--text-xs);

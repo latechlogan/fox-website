@@ -106,11 +106,13 @@ import { url } from "../utils/url.js";
   // Mobile nav toggle
   const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
   const nav = document.querySelector<HTMLElement>("#primary-nav");
+  const body = document.querySelector<HTMLElement>("body");
 
   toggle?.addEventListener("click", () => {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!isOpen));
     nav?.setAttribute("data-open", String(!isOpen));
+    body?.setAttribute("data-open", String(!isOpen));
   });
 
   // Submenu logic
@@ -368,7 +370,14 @@ import { url } from "../utils/url.js";
       font-size: var(--text-xl);
     }
 
-    .btn {
+    .nav-link.btn {
+      color: #fff;
+      font-size: var(--text-lg);
+      text-align: center;
+    }
+
+    .nav-link.btn.btn-secondary {
+      color: #222;
       font-size: var(--text-lg);
       text-align: center;
     }
