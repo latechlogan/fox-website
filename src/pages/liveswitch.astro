@@ -10,6 +10,7 @@ import TextBlock from "../components/grid-blocks/TextBlock.astro";
 import SectionGrid from "../components/SectionGrid.astro";
 import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { threeEasySteps } from "../data/iconBlocks";
+import CTAPhone from "../components/cta/CTAPhone.astro";
 ---
 
 <BaseLayout>
@@ -27,7 +28,7 @@ import { threeEasySteps } from "../data/iconBlocks";
       class="featured-logo"
     />
     <Fragment slot="buttons">
-      <a href="#" class="btn">Schedule a call</a>
+      <CTAPhone label="Call to schedule" />
       <a href="#liveswitch-steps" class="btn btn-secondary"
         >Learn how it works</a
       >
@@ -81,9 +82,7 @@ import { threeEasySteps } from "../data/iconBlocks";
               card={true}
             >
               <div class="btn-group" slot="cta">
-                <a href="#" class="btn btn-primary">
-                  Book online
-                </a>
+                <CTAPhone label="Call to schedule" />
               </div>
             </IconBlock>
           ) : (
