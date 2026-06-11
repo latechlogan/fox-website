@@ -24,11 +24,7 @@ import { url } from "../utils/url.js";
     <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
       <ul class="nav-group">
         <li class="nav-element js-has-submenu" data-expanded="false">
-          <button
-            class="nav-link"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
             What we do
             <svg
               aria-hidden="true"
@@ -51,7 +47,7 @@ import { url } from "../utils/url.js";
               <a href={url("/what-we-do/service-calls/")}>Service calls</a>
             </li>
             <!-- <li><a href={url("/what-we-do/projects/")}>Projects</a></li> -->
-            <li><a href={url("/what-we-do/service-area/")}>Service area</a></li>
+            <!-- <li><a href={url("/what-we-do/service-area/")}>Service area</a></li> -->
           </ul>
         </li>
 
@@ -64,11 +60,7 @@ import { url } from "../utils/url.js";
         </li>
 
         <li class="nav-element js-has-submenu" data-expanded="false">
-          <button
-            class="nav-link"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
             More
             <svg
               aria-hidden="true"
@@ -87,11 +79,11 @@ import { url } from "../utils/url.js";
           </button>
           <ul class="submenu" role="list">
             <li><a href={url("/liveswitch")}>LiveSwitch</a></li>
-            <li><a href={url("/pay-invoice")}>Pay Invoice</a></li>
+            <!-- <li><a href={url("/pay-invoice")}>Pay Invoice</a></li> -->
             <li><a href={url("/careers")}>Careers</a></li>
             <li><a href={url("/faq")}>FAQ</a></li>
-            <li><a href={url("/financing")}>Financing</a></li>
-            <li><a href={url("/moxey")}>Moxey</a></li>
+            <!-- <li><a href={url("/financing")}>Financing</a></li> -->
+            <!-- <li><a href={url("/moxey")}>Moxey</a></li> -->
           </ul>
         </li>
       </ul>
@@ -101,7 +93,9 @@ import { url } from "../utils/url.js";
           <a href={url("/contact")} class="nav-link btn">Contact</a>
         </li>
         <li class="nav-element">
-          <a href={url("/book-online")} class="nav-link btn btn-secondary">Book</a>
+          <a href={url("/book-online")} class="nav-link btn btn-secondary"
+            >Book</a
+          >
         </li>
       </ul>
     </nav>
