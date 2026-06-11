@@ -1,10 +1,11 @@
 ---
 const { eyebrow, heading, body } = Astro.props;
+const paragraphs: string[] = Array.isArray(body) ? body : [body];
 ---
 
 {eyebrow && <p class="eyebrow">{eyebrow}</p>}
 <h2 class="text-4xl text-heading">{heading}</h2>
-<p class="text-base">{body}</p>
+{paragraphs.map((p) => <p class="text-base">{p}</p>)}
 
 <style>
   .eyebrow {
