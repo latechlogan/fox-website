@@ -90,11 +90,15 @@ import { url } from "../utils/url.js";
 
       <ul class="nav-group">
         <li class="nav-element">
-          <a href={url("/contact")} class="nav-link btn">Contact</a>
+          <a href={url("/contact")} class="nav-link btn btn-secondary"
+            >Contact</a
+          >
         </li>
         <li class="nav-element">
-          <a href={url("/book-online")} class="nav-link btn btn-secondary"
-            >Book</a
+          <a
+            href="https://book.housecallpro.com/book/Fox-Family-Electric-LLC/78deb12faeff4e9cbf90f944d6d3c8f8"
+            target="_blank"
+            class="nav-link btn">Book</a
           >
         </li>
       </ul>
@@ -213,6 +217,7 @@ import { url } from "../utils/url.js";
   button.nav-link {
     background-color: inherit;
     border: none;
+    cursor: pointer;
   }
 
   .nav-link {
