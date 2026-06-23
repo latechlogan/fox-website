@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ApplicationForm from "../components/ApplicationForm.jsx";
+---
+
+<BaseLayout>
+  <div class="application-page fw-container">
+    <div class="mw-container">
+      <ApplicationForm client:load />
+    </div>
+  </div>
+</BaseLayout>

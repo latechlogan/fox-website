@@ -7,21 +7,21 @@ import Team from "../components/Team.astro";
 import SectionGrid from "../components/SectionGrid.astro";
 import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { careerBenefits } from "../data/iconBlocks";
+import { url } from "../utils/url";
 ---
 
 <BaseLayout>
   <Hero
     eyebrow="Careers"
     heading="Why we're different"
-    body={[
-      "Work here and you're not just clocking hours. You're part of a family business that treats people right, takes pride in the work, and invests in the people who show up every day.",
-      "If we sound like your kind of crew, we'd love to meet you. Stop by the office and fill out an application — 212 Haynes St, West Monroe, LA.",
-    ]}
+    body={"Work here and you're not just clocking hours. You're part of a family business that treats people right, takes pride in the work, and invests in the people who show up every day."}
   >
     <div class="image-wrapper" slot="image">
       <Image class="careers__hero-image" src={careersHero} alt="" />
     </div>
-    <!-- <a href="#" class="btn btn-primary" slot="buttons">Apply now</a> -->
+    <a href={url("/application")} class="btn btn-primary" slot="buttons"
+      >Apply now</a
+    >
   </Hero>
 
   <!-- <Team /> -->
@@ -44,7 +44,7 @@ import { careerBenefits } from "../data/iconBlocks";
       })
     }
     <div slot="cta" class="btn-group center">
-      <!-- <a href="#" class="btn btn-primary">Apply Now</a> -->
+      <a href={url("/application")} class="btn btn-primary">Apply Now</a>
     </div>
   </SectionGrid>
 </BaseLayout>
