@@ -36,6 +36,8 @@ export default function ApplicationForm() {
 
       if (response.ok && result.success) {
         form.reset();
+        setJobCount(1);
+        setRefCount(1);
         toast.success({
           text: "Application submitted!",
           description: "We'll review your application and be in touch soon.",
