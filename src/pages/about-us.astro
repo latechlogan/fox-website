@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
 import placeholder from "../../src/assets/placeholder.jpg";
+const showHeroImage = false; // flip to true when client provides photo
 import Team from "../components/Team.astro";
 import LogoGrid from "../components/LogoGrid.astro";
 import { url } from "../utils/url";
@@ -13,15 +14,13 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
   <Hero
     heading="Three generations built this on trust"
     body="Our story started simple. A man who knew electrical work, who did it right, and who treated every job like it mattered. His son learned the trade the same way — watching, doing, and understanding that a family's safety depends on honest work. Now his children carry that forward, and every electrician we hire learns the same thing on day one."
+    noImage={!showHeroImage}
   >
-    <div class="image-wrapper" slot="image">
-      <Image src={placeholder} alt="" />
-    </div>
-    <ul slot="bullets" class="hero-bullets">
-      <li>We show up when promised</li>
-      <li>We fix it right the first time</li>
-      <li>We treat your home like ours</li>
-    </ul>
+    {showHeroImage && (
+      <div class="image-wrapper" slot="image">
+        <Image src={placeholder} alt="" />
+      </div>
+    )}
     <!-- <a
       href={url("/about-us/#team-grid")}
       slot="buttons"

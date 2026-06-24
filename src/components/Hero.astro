@@ -1,12 +1,12 @@
 ---
 import SectionIntro from "./SectionIntro.astro";
 
-const { eyebrow, heading, body, reverse } = Astro.props;
+const { eyebrow, heading, body, reverse, noImage } = Astro.props;
 ---
 
 <div class="fw-container">
   <div class={`mw-container hero ${reverse ? "reverse" : ""}`}>
-    <div class="content-wrapper">
+    <div class={`content-wrapper ${noImage ? "content-wrapper--centered" : ""}`}>
       <SectionIntro eyebrow={eyebrow} heading={heading} body={body} />
 
       <!-- optional slots for dynamic content display -->
@@ -39,6 +39,19 @@ const { eyebrow, heading, body, reverse } = Astro.props;
 
   .content-wrapper {
     width: 100%;
+  }
+
+  .content-wrapper--centered {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .content-wrapper--centered .btn-group {
+    justify-content: center;
   }
 
   @media screen and (min-width: 768px) {
