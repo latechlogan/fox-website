@@ -24,7 +24,12 @@ export default function ApplicationForm() {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        body: (() => {
+          const fd = new FormData(form);
+          const data = Object.fromEntries(fd);
+          data.certs = fd.getAll("certs").join(", ");
+          return JSON.stringify(data);
+        })(),
       });
 
       const result = await response.json();
