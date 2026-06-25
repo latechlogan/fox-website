@@ -4,9 +4,6 @@ import PageBanner from "../../components/PageBanner.astro";
 import ReviewCarousel from "../../components/ReviewCarousel";
 import SectionGrid from "../../components/SectionGrid.astro";
 import CTABlock from "../../components/grid-blocks/CTABlock.astro";
-import { FaStarOfLife } from "react-icons/fa";
-import Image from "astro/components/Image.astro";
-import placeholder from "../../assets/placeholder.jpg";
 import CTAPhone from "../../components/cta/CTAPhone.astro";
 import { url } from "../../utils/url.js";
 ---
@@ -22,12 +19,6 @@ import { url } from "../../utils/url.js";
       <a href={url("/about")} class="btn btn-secondary">Our story</a>
     </div>
   </PageBanner>
-
-  <!-- <div class="fw-container">
-    <div class="mw-container">
-      <Image src={placeholder} alt="" class="service-area__img" />
-    </div>
-  </div> -->
 
   <ReviewCarousel client:visible />
 
@@ -62,10 +53,3 @@ import { url } from "../../utils/url.js";
   </SectionGrid>
 </BaseLayout>
 
-<style>
-  .service-area__img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-  }
-</style>

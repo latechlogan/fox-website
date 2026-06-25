@@ -8,7 +8,7 @@ const { review } = Astro.props;
   <div class={`${styles.reviewCarousel} mw-container`}>
     <div class={styles.carouselContent}>
       <div class={styles.starWrapper}>
-        {Array.from({ length: review.stars }, (_, i) => <FaStar />)}
+        {Array.from({ length: review.stars }, (_) => <FaStar />)}
       </div>
 
       <p class={styles.reviewBody}>"{review.body}"</p>

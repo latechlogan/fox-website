@@ -30,7 +30,7 @@ export default function ReviewCarousel() {
       <div className={`${styles.reviewCarousel} mw-container`}>
         <div className={styles.carouselContent}>
           <div className={styles.starWrapper}>
-            {Array.from({ length: review.stars }, (_, i) => (
+            {Array.from({ length: review.stars }, (_) => (
               <FaStar />
             ))}
           </div>

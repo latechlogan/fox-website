@@ -7,7 +7,7 @@ const { review } = Astro.props;
 
 <div class="review-block">
   <div class="star-wrapper">
-    {Array.from({ length: review.stars }, (_, i) => <FaStar />)}
+    {Array.from({ length: review.stars }, (_) => <FaStar />)}
   </div>
   <p class="review">{review.body}</p>
   <div class="reviewer">
