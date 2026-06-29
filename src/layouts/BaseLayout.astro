@@ -5,6 +5,8 @@ import Footer from "../components/Footer.astro";
 import "../css/global.css";
 import "../css/forms.css";
 import { url } from "../utils/url.js";
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,7 +21,8 @@ import { url } from "../utils/url.js";
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Fox Family Electric</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
   <body>
     <Header />
