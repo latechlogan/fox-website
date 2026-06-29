@@ -8,17 +8,22 @@ import { url } from "../utils/url";
 import foxCrew from "../assets/fox-fullcrew-old.webp";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Family-Owned Electricians in West Monroe, LA | Fox Family Electric"
+  description="Three generations of trusted electrical work in Louisiana. Fox Family Electric is family-owned, fully licensed, and committed to doing every job right."
+>
   <Hero
     heading="Three generations built this on trust"
     body="Our story started simple. A man who knew electrical work, who did it right, and who treated every job like it mattered. His son learned the trade the same way — watching, doing, and understanding that a family's safety depends on honest work. Now his children carry that forward, and every electrician we hire learns the same thing on day one."
     noImage={!showHeroImage}
   >
-    {showHeroImage && (
-      <div class="image-wrapper" slot="image">
-        <Image src={placeholder} alt="" />
-      </div>
-    )}
+    {
+      showHeroImage && (
+        <div class="image-wrapper" slot="image">
+          <Image src={placeholder} alt="" />
+        </div>
+      )
+    }
     <!-- <a
       href={url("/about-us/#team-grid")}
       slot="buttons"
@@ -49,7 +54,6 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       >See our careers page</a
     >
   </Hero>
-
 </BaseLayout>
 
 <!-- custom styling -->

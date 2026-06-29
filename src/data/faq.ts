@@ -45,7 +45,7 @@ export const businessLinesFAQ: FAQ[] = [
   {
     question: "What areas do you service?",
     answer:
-      "We cover [service area]. If you're unsure whether we reach your location, just give us a call and we'll let you know straight away.",
+      "We serve West Monroe, Monroe, and communities throughout Northeast Louisiana — including Ruston, Bastrop, Farmerville, Sterlington, and beyond. For large commercial jobs, we travel further. Not sure if we reach you? Just call and we'll let you know.",
   },
   {
     question: "Are you licensed and insured?",
