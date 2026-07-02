@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
-import placeholder from "../../src/assets/placeholder.jpg";
-const showHeroImage = false; // flip to true when client provides photo
+import aboutUsImage from "../../src/assets/fox-team/generations-hand.jpg";
+const showHeroImage = true; // flip to true when client provides photo
 import { url } from "../utils/url";
 import foxCrew from "../assets/fox-fullcrew-old.webp";
 ---
@@ -19,8 +19,8 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
   >
     {
       showHeroImage && (
-        <div class="image-wrapper" slot="image">
-          <Image src={placeholder} alt="" />
+        <div class="image-wrapper hero__image-wrapper" slot="image">
+          <Image src={aboutUsImage} class="hero-image" alt="" />
         </div>
       )
     }
@@ -60,6 +60,19 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
 <style>
   .hero-bullets li {
     margin: 0 0 0.5rem 0;
+  }
+
+  .hero__image-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: -2.5%;
+    max-width: unset;
+    width: 120%;
   }
 
   .mission {
