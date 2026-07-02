@@ -7,6 +7,7 @@ import SectionGrid from "../components/SectionGrid.astro";
 import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { careerBenefits } from "../data/iconBlocks";
 import { url } from "../utils/url";
+import Team from "../components/Team.astro";
 ---
 
 <BaseLayout
@@ -25,6 +26,8 @@ import { url } from "../utils/url";
       >Apply now</a
     >
   </Hero>
+
+  <Team />
 
   <SectionGrid
     eyebrow="Benefits"
