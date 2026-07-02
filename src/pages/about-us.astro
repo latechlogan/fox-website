@@ -6,6 +6,7 @@ import aboutUsImage from "../../src/assets/fox-team/generations-hand.jpg";
 const showHeroImage = true; // flip to true when client provides photo
 import { url } from "../utils/url";
 import foxCrew from "../assets/fox-fullcrew-old.webp";
+import Team from "../components/Team.astro";
 ---
 
 <BaseLayout
@@ -54,6 +55,8 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       >See our careers page</a
     >
   </Hero>
+
+  <div id="team-grid"><Team /></div>
 </BaseLayout>
 
 <!-- custom styling -->

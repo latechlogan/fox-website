@@ -1,3 +1,6 @@
+import davidHeadshot from "../assets/fox-team/david-headshot.jpg";
+import michaelHeadshot from "../assets/fox-team/michael-headshot.jpg";
+
 type TeamMember = {
   photo?: ImageMetadata;
   name: string;
@@ -7,51 +10,17 @@ type TeamMember = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Marcus Thibodeaux",
-    role: "Lead electrician",
+    photo: davidHeadshot,
+    name: "David Fox",
+    role: "Lead Electrician",
     description:
-      "Twenty years in the trade. Knows every circuit in Louisiana. Loves fishing on weekends.",
+      "One hundred years in the trade. Knows every circuit in Louisiana. Loves golfing on weekends.",
   },
   {
-    name: "Sarah Broussard",
-    role: "Operations manager",
+    photo: michaelHeadshot,
+    name: "Michael Fox",
+    role: "Operations Manager",
     description:
-      "Keeps everything running smooth. Former nurse, brings compassion to every customer interaction.",
-  },
-  {
-    name: "James Guidry",
-    role: "Field technician",
-    description:
-      "Third generation electrician. Grew up watching his father wire homes across Baton Rouge.",
-  },
-  {
-    name: "Denise Landry",
-    role: "Customer service",
-    description:
-      "Answers every call like it's her own house. Been with us since the beginning.",
-  },
-  {
-    name: "Robert Hebert",
-    role: "Commercial specialist",
-    description:
-      "Built the systems that power half the businesses in Lafayette. Detail-oriented and reliable.",
-  },
-  {
-    name: "Michelle Acosta",
-    role: "Apprentice electrician",
-    description:
-      "Learning the trade from the ground up. Eager, smart, and committed to excellence.",
-  },
-  {
-    name: "David Comeaux",
-    role: "Generator specialist",
-    description:
-      "Installed more backup systems than anyone. Makes sure families stay safe when storms hit.",
-  },
-  {
-    name: "Lisa Robichaux",
-    role: "Scheduling coordinator",
-    description:
-      "Gets you booked fast. Remembers every customer's name and their electrical quirks.",
+      "Counts macros like circuit breakers. Never misses leg day or a service call.",
   },
 ];

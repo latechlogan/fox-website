@@ -1,11 +1,13 @@
 ---
 import Image from "astro/components/Image.astro";
 import placeholder from "../../assets/placeholder.jpg";
-const { name, role, description } = Astro.props;
+const { photo, name, role, description } = Astro.props;
 ---
 
 <div class="staff-block">
-  <Image src={placeholder} alt="" class="staff-block__image" />
+  <div class="staff-block__image-wrapper">
+    <Image src={photo} alt="" class="staff-block__image" />
+  </div>
   <strong class="staff-block__name">{name}</strong>
   <span class="staff-block__role">{role}</span>
   <p class="staff-block__desc">{description}</p>
@@ -19,11 +21,21 @@ const { name, role, description } = Astro.props;
     align-items: flex-start;
   }
 
-  .staff-block__image {
+  .staff-block__image-wrapper {
+    position: relative;
     width: 80px;
     aspect-ratio: 1 /1;
     margin-bottom: 1rem;
     border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .staff-block__image {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (130% / 2));
+    max-width: unset;
+    width: 130%;
   }
 
   .staff-block__name {
