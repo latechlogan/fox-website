@@ -18,12 +18,13 @@ Sections removed from the site pending client-provided content. Each item notes 
 
 ## Logo Grid (About Us + Homepage)
 
-**Blocked by:** client-provided partner/award logos
+**Blocked by:** client-provided partner/award logos. `src/data/logos.ts` currently holds Raising Cane's, FastPace Health, and LiveSwitch, but these are placeholders used to build and preview `LogoGrid.astro` — not final, client-approved assets. A grid needs roughly 3–6 logos to look right visually, so more real logos are needed before this ships (and the `awards` export is still empty, pending client-provided award logos).
 
 **To restore:**
-1. Add logo assets to `src/assets/` and populate `src/data/logos.ts` (or the equivalent data file)
+1. Replace the placeholder entries in `src/data/logos.ts` with real client-approved logo assets (aim for 3–6) added to `src/assets/`
 2. In `about-us.astro`: re-add `import LogoGrid` and add the two `<LogoGrid>` instances after the Team section
 3. In `index.astro`: re-add `import LogoGrid` and add `<LogoGrid heading="Trusted by Louisiana families and businesses" />` before `</BaseLayout>`
+4. Awards: once award logos are provided, add the assets to `src/assets/`, uncomment and populate the `awards` export in `logos.ts`, and add a second `<LogoGrid>` instance in `about-us.astro`
 
 ---
 

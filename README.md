@@ -1,43 +1,22 @@
-# Astro Starter Kit: Minimal
+# Fox Family Electric — Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Marketing website for Fox Family Electric, a Louisiana-based electrical contractor. Built with [Astro](https://astro.build) (v6), with React used for interactive components (forms, carousels, the homepage review rotator).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command           | Action                                       |
+| :---------------- | :-------------------------------------------- |
+| `npm install`     | Installs dependencies                         |
+| `npm run dev`     | Starts local dev server at `localhost:4321`   |
+| `npm run build`   | Builds the production site to `./dist/`       |
+| `npm run preview` | Previews the production build locally         |
 
-## 👀 Want to learn more?
+Requires Node >= 22.12.0.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Documentation
+
+- **`CLAUDE.md`** — tech stack, directory structure, and key conventions
+- **`COMPONENTS.md`** — full prop/slot reference for every component
+- **`TODO.md`** — sections deferred pending client-provided content (team photos, partner/award logos, service area image)
