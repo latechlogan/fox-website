@@ -4,6 +4,17 @@ Quick reference for all components — props, slots, and usage examples.
 
 ---
 
+### `ApplicationForm.jsx`
+React job-application form. Posts to Web3Forms on submit and shows a toast (`@pheralb/toast`) on success/failure. Supports adding repeating "Work History" and "References" blocks via internal state.
+
+No props — access key and field set are hardcoded.
+
+```astro
+<ApplicationForm client:load />
+```
+
+---
+
 ### `BaseLayout.astro`
 Root layout wrapper used by every page. Renders `Header`, `GlobalCTA`, and `Footer` around page content. No props.
 
@@ -52,6 +63,17 @@ Bordered card block with an optional icon, heading, body, and a slot for action 
 
 ---
 
+### `ContactForm.jsx`
+React contact form (name, phone, email, topic/customer-type radio groups, message). Posts to Web3Forms on submit and shows a toast (`@pheralb/toast`) on success/failure.
+
+No props — access key and field set are hardcoded.
+
+```astro
+<ContactForm client:load />
+```
+
+---
+
 ### `FAQ.astro`
 Renders a list of FAQs in definition list format with an optional outro section.
 
@@ -86,19 +108,35 @@ Responsive site header with logo, nav links, and CTA buttons. Includes a mobile 
 
 ---
 
+### `HeroReviewRotator.jsx`
+Small auto-cycling review card (star rating, body, name, "Google Review" link) rendered inside the homepage hero image. Advances every 4s and respects `prefers-reduced-motion`.
+
+| Prop | Type | Required | Notes |
+|------|------|:--------:|-------|
+| `reviews` | `Review[]` | Yes | Pre-filtered list to rotate through (e.g. `reviews.filter((r) => r.rotator === true)`) |
+
+```astro
+<HeroReviewRotator
+  reviews={reviews.filter((review) => review.rotator === true)}
+  client:load
+/>
+```
+
+---
+
 ### `Hero.astro`
-Two-column section with text on one side and an image on the other. Stacks vertically on mobile.
+Two-column section with text on one side and slotted content (usually an image) on the other. Stacks vertically on mobile.
 
 | Prop | Type | Required | Default | Notes |
 |------|------|:--------:|---------|-------|
 | `heading` | `string` | Yes | — | |
 | `body` | `string` | Yes | — | |
-| `image` | `ImageMetadata` | Yes | — | |
-| `imageAlt` | `string` | Yes | — | |
 | `eyebrow` | `string` | No | — | Small label above heading |
-| `reverse` | `boolean` | No | `false` | Puts image on the left |
+| `reverse` | `boolean` | No | `false` | Puts the `image` slot on the left |
+| `noImage` | `boolean` | No | `false` | Centers the text column and drops the second column entirely |
 
 **Slots:**
+- `image` — Visual content for the non-text column (no `image`/`imageAlt` props — pass an `<Image>` directly)
 - `buttons` — CTA links/buttons
 - `logo` — Optional logo/badge above the heading
 - `bullets` — Optional bulleted list content
@@ -107,9 +145,10 @@ Two-column section with text on one side and an image on the other. Stacks verti
 <Hero
   heading="We're the electrical contractors trusted by your neighbors."
   body="Fox Family Electric has been reliably serving this community for generations."
-  image={photo}
-  imageAlt="Electrician at work"
 >
+  <div class="image-wrapper" slot="image">
+    <Image src={photo} alt="Electrician at work" />
+  </div>
   <Fragment slot="buttons">
     <CTAPhone />
     <a href="" class="btn btn-secondary">Contact us</a>
@@ -121,15 +160,23 @@ Two-column section with text on one side and an image on the other. Stacks verti
   eyebrow="Innovation"
   heading={"Get estimates faster.\nNo visit required."}
   body="With LiveSwitch, we assess your job through a live video call."
-  image={liveSwitchPhoto}
-  imageAlt=""
   reverse={true}
 >
+  <div class="image-wrapper" slot="image">
+    <Image src={liveSwitchPhoto} alt="" />
+  </div>
   <Image slot="logo" src={liveSwitch} alt="LiveSwitch logo" class="featured-logo" />
   <Fragment slot="buttons">
     <a href="" class="btn btn-secondary">Learn how it works</a>
   </Fragment>
 </Hero>
+
+<!-- No image, centered text -->
+<Hero
+  heading="Three generations built this on trust"
+  body="Our story started simple."
+  noImage={true}
+/>
 ```
 
 ---
@@ -162,7 +209,9 @@ Icon + heading + body block. Used for listing services or features.
 ---
 
 ### `LogoGrid.astro`
-Responsive grid of partner/client logos. Pulls data from `src/data/logos`.
+Responsive grid of partner/client logos, repeated twice for a scrolling-row effect. Pulls data from `src/data/logos`.
+
+Built but not currently rendered on any page — see `TODO.md` for wiring instructions.
 
 | Prop | Type | Required | Notes |
 |------|------|:--------:|-------|
@@ -284,12 +333,12 @@ Section with a `SectionIntro` header and a responsive grid of child blocks.
 ---
 
 ### `SectionIntro.astro`
-Standalone eyebrow + heading + body text block. Used inside `Hero` and `SectionGrid`, but can be used independently.
+Standalone eyebrow + heading + body text block. Used inside `Hero` and `SectionGrid` (which forward their own `heading`/`body`/`eyebrow` props to it), but can be used independently.
 
 | Prop | Type | Required | Notes |
 |------|------|:--------:|-------|
 | `heading` | `string` | Yes | Supports `\n` for line breaks (uses `white-space: pre-wrap`) |
-| `body` | `string` | Yes | |
+| `body` | `string \| string[]` | Yes | An array renders as multiple `<p>` paragraphs |
 | `eyebrow` | `string` | No | |
 
 ```astro
@@ -305,16 +354,17 @@ Standalone eyebrow + heading + body text block. Used inside `Hero` and `SectionG
 ### `StaffBlock.astro`
 Team member card with circular photo, name, role, and description. Used inside `Team`.
 
+**Currently hardcoded to `src/assets/placeholder.jpg`** for every card — it does not accept or render a `photo` prop yet, pending real staff photos. See `TODO.md` ("Team Grid") for the restore steps.
+
 | Prop | Type | Required | Notes |
 |------|------|:--------:|-------|
 | `name` | `string` | Yes | |
 | `role` | `string` | Yes | Job title |
 | `description` | `string` | Yes | Bio/description |
-| `photo` | `ImageMetadata` | No | |
 
 ```astro
 {teamMembers.map((m) => (
-  <StaffBlock name={m.name} role={m.role} description={m.description} photo={m.photo} />
+  <StaffBlock name={m.name} role={m.role} description={m.description} />
 ))}
 ```
 
@@ -354,7 +404,11 @@ Heading + body block without an icon. Supports the same `align` and `card` optio
 |------|---------|---------|
 | `src/data/faq` | `generalFAQ`, `businessLinesFAQ`, `faqBookOnline`, `faqPayInvoice`, `faqFinancing`, `faqMoxey` | `FAQ` (via pages) |
 | `src/data/iconBlocks` | `businessLines`, `serviceCallItems`, `serviceCallSteps`, `projectDisciplines`, `generatorNeeds`, `generatorBenefits`, `threeEasySteps`, `careerBenefits` | `IconBlock` (via pages) |
-| `src/data/logos` | `logos` | `LogoGrid` |
-| `src/data/reviews` | `reviews`, `projectReviews` | `ReviewBlock`, `ReviewCarousel`, `ReviewFeatured` |
+| `src/data/logos` | `logos` (currently 3 placeholder logos — see `TODO.md`; an `awards` export is stubbed out, pending client-provided award logos) | `LogoGrid` |
+| `src/data/reviews` | `reviews`, `projectReviews` | `ReviewBlock`, `ReviewCarousel`, `ReviewFeatured`, `HeroReviewRotator` |
 | `src/data/team` | `teamMembers` | `Team` → `StaffBlock` |
 | `src/data/textBlocks` | `generatorBenefits` | `TextBlock` (via pages) |
+
+Note: `src/data/iconBlocks` and `src/data/textBlocks` both export a `generatorBenefits` array (different shapes — icon blocks vs. plain text blocks) — import from the file matching the component you're using.
+
+Each `Review` also carries `featured` and `rotator` booleans used by pages to filter which reviews show where (e.g. `reviews.filter((r) => r.rotator === true)` for `HeroReviewRotator`), plus an optional `photo` (`ImageMetadata`).
