@@ -4,7 +4,6 @@ import GlobalCTA from "../components/GlobalCTA.astro";
 import Footer from "../components/Footer.astro";
 import "../css/global.css";
 import "../css/forms.css";
-import { url } from "../utils/url.js";
 import { getImage } from "astro:assets";
 import foxLogo from "../assets/redfox_highres.jpg";
 import { business } from "../data/business";
@@ -12,7 +11,7 @@ import { business } from "../data/business";
 const { title, description } = Astro.props;
 
 const logo = await getImage({ src: foxLogo });
-const siteUrl = new URL(url("/"), Astro.site);
+const siteUrl = new URL("/", Astro.site);
 const logoUrl = new URL(logo.src, Astro.site);
 
 const jsonLd = {
@@ -49,8 +48,8 @@ const jsonLd = {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href={url("/favicon.svg")} />
-    <link rel="icon" href={url("/favicon.ico")} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <!-- font link -->
     <link
       href="https://api.fontshare.com/v2/css?f[]=spline-sans@1&display=swap"

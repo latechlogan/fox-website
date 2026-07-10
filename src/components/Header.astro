@@ -1,12 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import foxLogo from "../../src/assets/redfox_highres.jpg";
-import { url } from "../utils/url.js";
 ---
 
 <header class="fw-container">
   <div class="mw-container header">
-    <a href={url("/")} class="banner" aria-label="Fox Family Electric — home">
+    <a href="/" class="banner" aria-label="Fox Family Electric — home">
       <Image src={foxLogo} alt="Fox Family Electric Logo" />
     </a>
 
@@ -42,21 +41,21 @@ import { url } from "../utils/url.js";
             </svg>
           </button>
           <ul class="submenu" role="list">
-            <li><a href={url("/what-we-do/")}>Our services</a></li>
+            <li><a href="/what-we-do/">Our services</a></li>
             <li>
-              <a href={url("/what-we-do/service-calls/")}>Service calls</a>
+              <a href="/what-we-do/service-calls/">Service calls</a>
             </li>
-            <!-- <li><a href={url("/what-we-do/projects/")}>Projects</a></li> -->
-            <!-- <li><a href={url("/what-we-do/service-area/")}>Service area</a></li> -->
+            <!-- <li><a href="/what-we-do/projects/">Projects</a></li> -->
+            <!-- <li><a href="/what-we-do/service-area/">Service area</a></li> -->
           </ul>
         </li>
 
         <li class="nav-element">
-          <a href={url("/generators/")} class="nav-link">Generators</a>
+          <a href="/generators/" class="nav-link">Generators</a>
         </li>
 
         <li class="nav-element">
-          <a href={url("/about-us/")} class="nav-link">About us</a>
+          <a href="/about-us/" class="nav-link">About us</a>
         </li>
 
         <li class="nav-element js-has-submenu" data-expanded="false">
@@ -78,19 +77,19 @@ import { url } from "../utils/url.js";
             </svg>
           </button>
           <ul class="submenu" role="list">
-            <li><a href={url("/liveswitch")}>LiveSwitch</a></li>
-            <!-- <li><a href={url("/pay-invoice")}>Pay Invoice</a></li> -->
-            <li><a href={url("/careers")}>Careers</a></li>
-            <li><a href={url("/faq")}>FAQ</a></li>
-            <!-- <li><a href={url("/financing")}>Financing</a></li> -->
-            <!-- <li><a href={url("/moxey")}>Moxey</a></li> -->
+            <li><a href="/liveswitch">LiveSwitch</a></li>
+            <!-- <li><a href="/pay-invoice">Pay Invoice</a></li> -->
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <!-- <li><a href="/financing">Financing</a></li> -->
+            <!-- <li><a href="/moxey">Moxey</a></li> -->
           </ul>
         </li>
       </ul>
 
       <ul class="nav-group">
         <li class="nav-element">
-          <a href={url("/contact")} class="nav-link btn btn-secondary"
+          <a href="/contact" class="nav-link btn btn-secondary"
             >Contact</a
           >
         </li>

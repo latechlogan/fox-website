@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import foxLogo from "../../src/assets/redfox_highres.jpg";
-import { url } from "../utils/url.js";
 
 import { SocialIcon } from "react-social-icons";
 import "react-social-icons/facebook";
@@ -14,7 +13,7 @@ import "react-social-icons/youtube";
 <footer class="fw-container">
   <div class="mw-container footer">
     <div class="footer__intro">
-      <a href={url("/")} class="banner" aria-label="Fox Family Electric — home">
+      <a href="/" class="banner" aria-label="Fox Family Electric — home">
         <Image src={foxLogo} alt="Fox Family Electric Logo" />
       </a>
       <div class="highlight">
@@ -70,42 +69,42 @@ import "react-social-icons/youtube";
     </div>
     <ul class="footer__nav">
       <li class="footer__nav-element">
-        <a href={url("/what-we-do/service-calls")} class="footer__nav-link"
+        <a href="/what-we-do/service-calls" class="footer__nav-link"
           >Service calls</a
         >
       </li>
       <li class="footer__nav-element">
-        <a href={url("/generators")} class="footer__nav-link">Generators</a>
+        <a href="/generators" class="footer__nav-link">Generators</a>
       </li>
       <!-- <li class="footer__nav-element">
-        <a href={url("/what-we-do/projects")} class="footer__nav-link"
+        <a href="/what-we-do/projects" class="footer__nav-link"
           >Projects</a
         >
       </li> -->
       <!-- <li class="footer__nav-element">
-        <a href={url("/what-we-do/service-area")} class="footer__nav-link"
+        <a href="/what-we-do/service-area" class="footer__nav-link"
           >Service area</a
         >
       </li> -->
       <li class="footer__nav-element">
-        <a href={url("/about-us")} class="footer__nav-link">About Us</a>
+        <a href="/about-us" class="footer__nav-link">About Us</a>
       </li>
       <li class="footer__nav-element">
-        <a href={url("/about-us/#mission")} class="footer__nav-link"
+        <a href="/about-us/#mission" class="footer__nav-link"
           >Mission and vision</a
         >
       </li>
       <li class="footer__nav-element">
-        <a href={url("/liveswitch")} class="footer__nav-link">LiveSwitch</a>
+        <a href="/liveswitch" class="footer__nav-link">LiveSwitch</a>
       </li>
       <li class="footer__nav-element">
-        <a href={url("/careers")} class="footer__nav-link">Careers</a>
+        <a href="/careers" class="footer__nav-link">Careers</a>
       </li>
       <li class="footer__nav-element">
-        <a href={url("/faq")} class="footer__nav-link">FAQ</a>
+        <a href="/faq" class="footer__nav-link">FAQ</a>
       </li>
       <li class="footer__nav-element">
-        <a href={url("/contact")} class="footer__nav-link">Contact</a>
+        <a href="/contact" class="footer__nav-link">Contact</a>
       </li>
     </ul>
     <div class="fine-print">

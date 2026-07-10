@@ -8,7 +8,6 @@ import { businessLinesFAQ } from "../../data/faq";
 import careersHero from "../../assets/careers-hero.jpg";
 import { Image } from "astro:assets";
 import CTAPhone from "../../components/cta/CTAPhone.astro";
-import { url } from "../../utils/url.js";
 ---
 
 <BaseLayout
@@ -27,7 +26,7 @@ import { url } from "../../utils/url.js";
     >
       <div slot="cta" class="btn-group">
         <CTAPhone label="Book a service call" />
-        <a href={url("/what-we-do/service-calls")} class="btn btn-secondary">
+        <a href="/what-we-do/service-calls" class="btn btn-secondary">
           Learn about service calls
         </a>
       </div>
@@ -38,7 +37,7 @@ import { url } from "../../utils/url.js";
     >
       <div slot="cta" class="btn-group">
         <CTAPhone label="Start a project" />
-        <!-- <a href={url("/what-we-do/projects")} class="btn btn-secondary">
+        <!-- <a href="/what-we-do/projects" class="btn btn-secondary">
           Learn about projects
         </a> -->
       </div>
@@ -59,7 +58,7 @@ import { url } from "../../utils/url.js";
     </ul>
     <div slot="buttons" class="btn-group">
       <CTAPhone label="Book a service call" />
-      <a href={url("/about-us")} class="btn btn-secondary">Our story</a>
+      <a href="/about-us" class="btn btn-secondary">Our story</a>
     </div>
   </Hero>
 
