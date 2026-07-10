@@ -14,7 +14,7 @@ export const logos: Logo[] = [
   },
   {
     src: fastPaceHealth,
-    alt: "Fast Pace Healt logo",
+    alt: "Fast Pace Health logo",
   },
   {
     src: liveSwitch,
