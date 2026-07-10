@@ -2,7 +2,22 @@
 import type { FAQ } from "../data/faq";
 import SectionIntro from "./SectionIntro.astro";
 const { body, faqs, outro } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ question, answer }: FAQ) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer,
+    },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <div class="fw-container">
   <div class="mw-container faq">
