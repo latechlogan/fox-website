@@ -11,7 +11,6 @@ import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { businessLines } from "../data/iconBlocks";
 import heroHouses from "../assets/hero-houses-photo.jpg";
 import CTAPhone from "../components/cta/CTAPhone.astro";
-import { url } from "../utils/url";
 import { FaStar } from "react-icons/fa";
 import HeroReviewRotator from "../components/HeroReviewRotator.jsx";
 import generatorImage from "../assets/generator-homepage.png";
@@ -51,7 +50,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
     </div>
     <Fragment slot="buttons">
       <CTAPhone label="Book a service call" />
-      <a href={url("/contact")} class="btn btn-secondary">Contact us</a>
+      <a href="/contact" class="btn btn-secondary">Contact us</a>
     </Fragment>
   </Hero>
 
@@ -81,7 +80,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       <Image src={foxCrew} alt="" />
     </div>
     <Fragment slot="buttons">
-      <a href={url("/about-us")} class="btn btn-secondary">Meet the family</a>
+      <a href="/about-us" class="btn btn-secondary">Meet the family</a>
     </Fragment>
   </Hero>
 
@@ -104,7 +103,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       })
     }
     <div class="btn-group" slot="cta">
-      <a href={url("/what-we-do/")} class="btn btn-secondary"
+      <a href="/what-we-do/" class="btn btn-secondary"
         >Explore our services</a
       >
     </div>
@@ -125,7 +124,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       class="featured-logo"
     />
     <Fragment slot="buttons">
-      <a href={url("/liveswitch")} class="btn btn-secondary"
+      <a href="/liveswitch" class="btn btn-secondary"
         >Learn how it works</a
       >
     </Fragment>
@@ -141,7 +140,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       <Image src={generatorImage} alt="" />
     </div>
     <Fragment slot="buttons">
-      <a href={url("/generators")} class="btn btn-primary"
+      <a href="/generators" class="btn btn-primary"
         >Call about generators</a
       >
     </Fragment>

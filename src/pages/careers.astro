@@ -6,7 +6,6 @@ import careersHero from "../assets/careers-hero.jpg";
 import SectionGrid from "../components/SectionGrid.astro";
 import IconBlock from "../components/grid-blocks/IconBlock.astro";
 import { careerBenefits } from "../data/iconBlocks";
-import { url } from "../utils/url";
 ---
 
 <BaseLayout
@@ -21,7 +20,7 @@ import { url } from "../utils/url";
     <div class="image-wrapper" slot="image">
       <Image class="careers__hero-image" src={careersHero} alt="" />
     </div>
-    <a href={url("/application")} class="btn btn-primary" slot="buttons"
+    <a href="/application" class="btn btn-primary" slot="buttons"
       >Apply now</a
     >
   </Hero>
@@ -44,7 +43,7 @@ import { url } from "../utils/url";
       })
     }
     <div slot="cta" class="btn-group center">
-      <a href={url("/application")} class="btn btn-primary">Apply Now</a>
+      <a href="/application" class="btn btn-primary">Apply Now</a>
     </div>
   </SectionGrid>
 </BaseLayout>

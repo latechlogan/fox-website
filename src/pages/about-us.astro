@@ -4,7 +4,6 @@ import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
 import placeholder from "../../src/assets/placeholder.jpg";
 const showHeroImage = false; // flip to true when client provides photo
-import { url } from "../utils/url";
 import foxCrew from "../assets/fox-fullcrew-old.webp";
 ---
 
@@ -25,7 +24,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
       )
     }
     <!-- <a
-      href={url("/about-us/#team-grid")}
+      href="/about-us/#team-grid"
       slot="buttons"
       class="btn btn-secondary">Meet the team</a
     > -->
@@ -50,7 +49,7 @@ import foxCrew from "../assets/fox-fullcrew-old.webp";
     <div class="image-wrapper" slot="image">
       <Image src={foxCrew} alt="" />
     </div>
-    <a href={url("/careers")} slot="buttons" class="btn btn-secondary"
+    <a href="/careers" slot="buttons" class="btn btn-secondary"
       >See our careers page</a
     >
   </Hero>

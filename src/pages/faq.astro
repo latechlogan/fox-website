@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageBanner from "../components/PageBanner.astro";
 import FAQ from "../components/FAQ.astro";
 import { generalFAQ } from "../data/faq";
-import { url } from "../utils/url";
 ---
 
 <BaseLayout
@@ -16,10 +15,10 @@ import { url } from "../utils/url";
     body="Find what you need to know about our services, pricing, and how we work with families like yours."
   >
     <div class="btn-group" slot="cta">
-      <a href={url("/what-we-do")} class="btn btn-primary"
+      <a href="/what-we-do" class="btn btn-primary"
         >Explore our services</a
       >
-      <a href={url("/contact")} class="btn btn-secondary">Contact us</a>
+      <a href="/contact" class="btn btn-secondary">Contact us</a>
     </div>
   </PageBanner>
 

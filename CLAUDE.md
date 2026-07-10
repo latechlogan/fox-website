@@ -38,8 +38,6 @@ src/
 ├── data/            # Typed data arrays (reviews, logos, iconBlocks, faq, team, textBlocks)
 ├── layouts/
 │   └── BaseLayout.astro  # Root layout (Header, GlobalCTA, Footer, global styles)
-├── utils/
-│   └── url.js       # `url()` helper — see Key Conventions
 └── pages/
     ├── index.astro
     ├── about-us.astro
@@ -66,6 +64,5 @@ src/
 - **Buttons:** `<a class="btn">` for primary, `<a class="btn btn-secondary">` for secondary
 - **Data → components:** data arrays live in `src/data/`; pages import and map over them
 - **Astro vs React:** prefer `.astro` by default; use `.jsx` only when client-side interactivity is needed (add `client:load` or `client:visible` directive when using React in Astro)
-- **Internal links:** always wrap internal paths with the `url()` helper from `src/utils/url.js` (e.g. `url("/contact")`) instead of a raw `href="/contact"` — it prefixes `import.meta.env.BASE_URL` so links keep working if the site is ever deployed under a subpath (see the commented-out `base` option in `astro.config.mjs`)
 
 See `COMPONENTS.md` for full prop/slot reference for every component, and `TODO.md` for sections deferred pending client-provided content (team photos, partner/award logos, service area image).
