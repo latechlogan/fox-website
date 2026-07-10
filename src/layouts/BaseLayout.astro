@@ -5,8 +5,45 @@ import Footer from "../components/Footer.astro";
 import "../css/global.css";
 import "../css/forms.css";
 import { url } from "../utils/url.js";
+import { getImage } from "astro:assets";
+import foxLogo from "../assets/redfox_highres.jpg";
+import { business } from "../data/business";
 
 const { title, description } = Astro.props;
+
+const logo = await getImage({ src: foxLogo });
+const siteUrl = new URL(url("/"), Astro.site);
+const logoUrl = new URL(logo.src, Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ElectricalContractor",
+  "@id": `${siteUrl}#business`,
+  name: business.name,
+  legalName: business.legalName,
+  url: siteUrl.toString(),
+  logo: logoUrl.toString(),
+  image: logoUrl.toString(),
+  telephone: business.telephone,
+  email: business.email,
+  address: {
+    "@type": "PostalAddress",
+    ...business.address,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    ...business.geo,
+  },
+  areaServed: business.areaServed.map(({ type, name }) => ({
+    "@type": type,
+    name,
+  })),
+  openingHoursSpecification: business.openingHours.map((hours) => ({
+    "@type": "OpeningHoursSpecification",
+    ...hours,
+  })),
+  sameAs: business.sameAs,
+};
 ---
 
 <html lang="en">
@@ -23,6 +60,7 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <Header />
