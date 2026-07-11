@@ -1,13 +1,13 @@
 ---
 /**
- * Google Analytics 4 via Partytown.
+ * Google Analytics 4.
  *
  * Renders nothing unless PUBLIC_GA4_ID is set (e.g. in Netlify env vars),
  * so local dev and preview builds send no analytics.
  *
- * The tiny gtag() stub stays on the main thread so any code can call
- * window.gtag(); Partytown forwards dataLayer.push into the worker where
- * the heavy gtag.js actually runs (see forward config in astro.config.mjs).
+ * gtag.js is loaded as a plain async script. We previously ran it in a web
+ * worker via Partytown, but gtag never sent measurement hits from the worker
+ * (a known Partytown+GA4 failure), so no data reached GA.
  *
  * Conversion events (mark these as key events in the GA4 admin UI):
  *   phone_call    — click on any tel: link
@@ -21,6 +21,11 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
 {
   GA4_ID && (
     <>
+      <script
+        is:inline
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+      />
       <script is:inline define:vars={{ GA4_ID }}>
         window.dataLayer = window.dataLayer || [];
         window.gtag = function () {
@@ -42,11 +47,6 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
           }
         });
       </script>
-      <script
-        is:inline
-        type="text/partytown"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
-      />
     </>
   )
 }
