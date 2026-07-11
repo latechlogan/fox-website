@@ -29,6 +29,7 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
+        window.gtag?.("event", "generate_lead", { form: "contact" });
         form.reset();
         toast.success({
           text: "Message sent!",

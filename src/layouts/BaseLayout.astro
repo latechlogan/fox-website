@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Analytics from "../components/Analytics.astro";
 import GlobalCTA from "../components/GlobalCTA.astro";
 import Footer from "../components/Footer.astro";
 import "../css/global.css";
@@ -60,6 +61,7 @@ const jsonLd = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <Analytics />
   </head>
   <body>
     <Header />

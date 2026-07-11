@@ -1,0 +1,52 @@
+---
+/**
+ * Google Analytics 4 via Partytown.
+ *
+ * Renders nothing unless PUBLIC_GA4_ID is set (e.g. in Netlify env vars),
+ * so local dev and preview builds send no analytics.
+ *
+ * The tiny gtag() stub stays on the main thread so any code can call
+ * window.gtag(); Partytown forwards dataLayer.push into the worker where
+ * the heavy gtag.js actually runs (see forward config in astro.config.mjs).
+ *
+ * Conversion events (mark these as key events in the GA4 admin UI):
+ *   phone_call    — click on any tel: link
+ *   email_click   — click on any mailto: link
+ *   book_online   — click through to the Housecall Pro booking page
+ *   generate_lead — successful contact form submission (fired from ContactForm.jsx)
+ */
+const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
+---
+
+{
+  GA4_ID && (
+    <>
+      <script is:inline define:vars={{ GA4_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          dataLayer.push(arguments);
+        };
+        gtag("js", new Date());
+        gtag("config", GA4_ID);
+
+        document.addEventListener("click", (event) => {
+          const link = event.target.closest("a[href]");
+          if (!link) return;
+          const href = link.getAttribute("href");
+          if (href.startsWith("tel:")) {
+            gtag("event", "phone_call", { link_url: href });
+          } else if (href.startsWith("mailto:")) {
+            gtag("event", "email_click", { link_url: href });
+          } else if (href.includes("book.housecallpro.com")) {
+            gtag("event", "book_online", { link_url: href });
+          }
+        });
+      </script>
+      <script
+        is:inline
+        type="text/partytown"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+      />
+    </>
+  )
+}
